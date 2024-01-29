@@ -72,7 +72,7 @@ function initializeSupertokens() {
 }
 function configureCors() {
   const corsOptions = {
-    origin: configuration.corsAllowedOrigins,
+    origin: configuration.corsAllowedOrigins.split(','),
     exposedHeaders: ["Content-Range", "Range"],
     allowedHeaders: [
       "Access-Control-Allow-Origin",
