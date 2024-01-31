@@ -8,12 +8,12 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { BooksList, BooksCreate, BooksEdit} from "./resources/Books";
-import { AuthorsList, AuthorsCreate, AuthorsEdit} from "./resources/Authors";
-import { GenresList, GenresCreate, GenresEdit} from "./resources/Genres";
-import BooksIcon from "@mui/icons-material/Book";
-import AuthorsIcon from "@mui/icons-material/Person";
-import GenresIcon from "@mui/icons-material/Category"; 
+import { booksList, booksCreate, booksEdit} from "./resources/books";
+import { authorsList, authorsCreate, authorsEdit} from "./resources/authors";
+import { genresList, genresCreate, genresEdit} from "./resources/genres";
+import booksIcon from "@mui/icons-material/LibraryBooks";
+import authorsIcon from "@mui/icons-material/Person";
+import genresIcon from "@mui/icons-material/Category"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -75,24 +75,24 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="Books" options={{label:"books"}} 
-list={BooksList}
-create={BooksCreate}
-edit={BooksEdit}
+    <Resource name="books" options={{label:"Books"}} 
+list={booksList}
+create={booksCreate}
+edit={booksEdit}
 recordRepresentation="title"
-icon={BooksIcon}/>
-<Resource name="Authors" options={{label:"authors"}} 
-list={AuthorsList}
-create={AuthorsCreate}
-edit={AuthorsEdit}
+icon={booksIcon}/>
+<Resource name="authors" options={{label:"Authors"}} 
+list={authorsList}
+create={authorsCreate}
+edit={authorsEdit}
 recordRepresentation="name"
-icon={AuthorsIcon}/>
-<Resource name="Genres" options={{label:"genres"}} 
-list={GenresList}
-create={GenresCreate}
-edit={GenresEdit}
+icon={authorsIcon}/>
+<Resource name="genres" options={{label:"Genres"}} 
+list={genresList}
+create={genresCreate}
+edit={genresEdit}
 recordRepresentation="category"
-icon={GenresIcon}/>
+icon={genresIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
