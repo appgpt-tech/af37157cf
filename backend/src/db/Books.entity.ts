@@ -16,7 +16,7 @@ author: string;
 genre: string;
 
 @Column({nullable: true})
-bookCover: string;
+cover: string;
 
 
 }
