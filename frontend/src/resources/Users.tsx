@@ -41,17 +41,15 @@ const ListActions = () => (
 );
 const UsersTitle = () => {
   const record = useRecordContext();
-  return <span>Users {record ? `"${ record.userID }"` : ""}</span>;
+  return <span>Users {record ? `"${ record.userId }"` : ""}</span>;
 };
 
 export const UsersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="userID" />
-<TextField source="name" />
+          <NumberField source="userId" />
 <TextField source="email" />
-<TextField source="password" />
-<TextField source="role" />
+<TextField source="name" />
 <NumberField source="id" /><EditButton />
 
         </DatagridConfigurable>
@@ -61,11 +59,9 @@ export const UsersList = () => (
 export const UsersEdit = () => (
                     <Edit title={<UsersTitle />}>
                       <SimpleForm>
-                          <TextInput source="userID"   />
-<TextInput source="name"   />
+                          <NumberInput source="userId"   />
 <TextInput source="email"   />
-<TextInput source="password"   />
-<TextInput source="role"   />
+<TextInput source="name"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
@@ -74,11 +70,9 @@ export const UsersEdit = () => (
 export const UsersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="userID"   />
-<TextInput source="name"   />
+                                        <NumberInput source="userId"   />
 <TextInput source="email"   />
-<TextInput source="password"   />
-<TextInput source="role"   />
+<TextInput source="name"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
@@ -86,8 +80,6 @@ export const UsersCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
-,
 ,
 ,
 ,
