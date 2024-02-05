@@ -41,15 +41,15 @@ const ListActions = () => (
 );
 const SetsTitle = () => {
   const record = useRecordContext();
-  return <span>Sets {record ? `"${ record.setID }"` : ""}</span>;
+  return <span>Sets {record ? `"${ record.setId }"` : ""}</span>;
 };
 
 export const SetsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="setID" />
+          <NumberField source="setId" />
 <TextField source="setName" />
-<TextField source="releaseDate" />
+<DateField source="releaseDate" />
 <NumberField source="totalCards" />
 <NumberField source="id" /><EditButton />
 
@@ -60,9 +60,9 @@ export const SetsList = () => (
 export const SetsEdit = () => (
                     <Edit title={<SetsTitle />}>
                       <SimpleForm>
-                          <TextInput source="setID"   />
+                          <NumberInput source="setId"   />
 <TextInput source="setName"   />
-<TextInput source="releaseDate"   />
+<DateInput source="releaseDate"   />
 <NumberInput source="totalCards"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
@@ -72,9 +72,9 @@ export const SetsEdit = () => (
 export const SetsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="setID"   />
+                                        <NumberInput source="setId"   />
 <TextInput source="setName"   />
-<TextInput source="releaseDate"   />
+<DateInput source="releaseDate"   />
 <NumberInput source="totalCards"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
