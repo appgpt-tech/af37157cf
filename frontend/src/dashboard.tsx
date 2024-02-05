@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title= "" />
-      <CardContent> Built by appGPT < /CardContent>
+      <CardHeader title= "CardCollector" />
+      <CardContent> A application for managing card collections < /CardContent>
       </Card>
     );
