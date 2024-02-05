@@ -7,19 +7,13 @@ export class UsersEntity {
   id: number;
 
   @Column({nullable: true})
-userID: string;
-
-@Column({nullable: true})
-name: string;
+userId: string;
 
 @Column({nullable: true})
 email: string;
 
 @Column({nullable: true})
-password: string;
-
-@Column({nullable: true})
-role: string;
+name: string;
 
 
 }
