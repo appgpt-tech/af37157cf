@@ -7,10 +7,10 @@ export class CardsEntity {
   id: number;
 
   @Column({nullable: true})
-cardID: string;
+cardId: string;
 
 @Column({nullable: true})
-setID: string;
+setid: string;
 
 @Column({nullable: true})
 cardName: string;
@@ -28,7 +28,7 @@ rarity: string;
 condition: string;
 
 @Column({nullable: true})
-imageURL: string;
+imageurl: string;
 
 
 }
