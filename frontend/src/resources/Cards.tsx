@@ -41,20 +41,20 @@ const ListActions = () => (
 );
 const CardsTitle = () => {
   const record = useRecordContext();
-  return <span>Cards {record ? `"${ record.cardID }"` : ""}</span>;
+  return <span>Cards {record ? `"${ record.cardId }"` : ""}</span>;
 };
 
 export const CardsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="cardID" />
-<TextField source="setID" />
+          <NumberField source="cardId" />
+<ReferenceField source="setid" reference="Sets"  />
 <TextField source="cardName" />
 <TextField source="serial" />
 <TextField source="type" />
 <TextField source="rarity" />
 <TextField source="condition" />
-<TextField source="imageURL" />
+<TextField source="imageurl" />
 <NumberField source="id" /><EditButton />
 
         </DatagridConfigurable>
@@ -64,14 +64,14 @@ export const CardsList = () => (
 export const CardsEdit = () => (
                     <Edit title={<CardsTitle />}>
                       <SimpleForm>
-                          <TextInput source="cardID"   />
-<TextInput source="setID"   />
+                          <NumberInput source="cardId"   />
+<ReferenceInput source="setid"  reference="Sets"   />
 <TextInput source="cardName"   />
 <TextInput source="serial"   />
 <TextInput source="type"   />
 <TextInput source="rarity"   />
 <TextInput source="condition"   />
-<TextInput source="imageURL"   />
+<TextInput source="imageurl"   />
 <NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
@@ -80,14 +80,14 @@ export const CardsEdit = () => (
 export const CardsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="cardID"   />
-<TextInput source="setID"   />
+                                        <NumberInput source="cardId"   />
+<ReferenceInput source="setid"  reference="Sets"   />
 <TextInput source="cardName"   />
 <TextInput source="serial"   />
 <TextInput source="type"   />
 <TextInput source="rarity"   />
 <TextInput source="condition"   />
-<TextInput source="imageURL"   />
+<TextInput source="imageurl"   />
 <NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
@@ -96,7 +96,7 @@ export const CardsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-,
+<ReferenceInput source="setid" label="setid" reference="Sets"   alwaysOn/>,
 ,
 ,
 ,
