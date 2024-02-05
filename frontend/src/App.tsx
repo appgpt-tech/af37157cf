@@ -8,16 +8,8 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import { CardsList, CardsCreate, CardsEdit} from "./resources/Cards";
-import { SetsList, SetsCreate, SetsEdit} from "./resources/Sets";
-import { InventoryList, InventoryCreate, InventoryEdit} from "./resources/Inventory";
-import { WishlistList, WishlistCreate, WishlistEdit} from "./resources/Wishlist";
-import UsersIcon from "@mui/icons-material/Person";
-import CardsIcon from "@mui/icons-material/Collections";
-import SetsIcon from "@mui/icons-material/Category";
-import InventoryIcon from "@mui/icons-material/Storage";
-import WishlistIcon from "@mui/icons-material/Favorite"; 
+
+ 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -79,36 +71,7 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="Users" options={{label:"users"}} 
-list={UsersList}
-create={UsersCreate}
-edit={UsersEdit}
-recordRepresentation="userID"
-icon={UsersIcon}/>
-<Resource name="Cards" options={{label:"cards"}} 
-list={CardsList}
-create={CardsCreate}
-edit={CardsEdit}
-recordRepresentation="cardID"
-icon={CardsIcon}/>
-<Resource name="Sets" options={{label:"sets"}} 
-list={SetsList}
-create={SetsCreate}
-edit={SetsEdit}
-recordRepresentation="setID"
-icon={SetsIcon}/>
-<Resource name="Inventory" options={{label:"inventory"}} 
-list={InventoryList}
-create={InventoryCreate}
-edit={InventoryEdit}
-recordRepresentation="userID"
-icon={InventoryIcon}/>
-<Resource name="Wishlist" options={{label:"wishlist"}} 
-list={WishlistList}
-create={WishlistCreate}
-edit={WishlistEdit}
-recordRepresentation="userID"
-icon={WishlistIcon}/>
+    
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
