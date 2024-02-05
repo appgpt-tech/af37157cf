@@ -8,10 +8,8 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import { CardsList, CardsCreate, CardsEdit} from "./resources/Cards";
-import UsersIcon from "@mui/icons-material/Person";
-import CardsIcon from "@mui/icons-material/CreditCard"; 
+
+ 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -73,18 +71,7 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    <Resource name="Users" options={{label:"users"}} 
-list={UsersList}
-create={UsersCreate}
-edit={UsersEdit}
-recordRepresentation="userId"
-icon={UsersIcon}/>
-<Resource name="Cards" options={{label:"cards"}} 
-list={CardsList}
-create={CardsCreate}
-edit={CardsEdit}
-recordRepresentation="cardId"
-icon={CardsIcon}/>
+    
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
