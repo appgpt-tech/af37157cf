@@ -7,10 +7,10 @@ export class WishlistEntity {
   id: number;
 
   @Column({nullable: true})
-userID: string;
+userId: string;
 
 @Column({nullable: true})
-cardID: string;
+cardId: string;
 
 @Column({nullable: true})
 insertedDate: string;
