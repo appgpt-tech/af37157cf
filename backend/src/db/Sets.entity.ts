@@ -7,7 +7,7 @@ export class SetsEntity {
   id: number;
 
   @Column({nullable: true})
-setID: string;
+setId: string;
 
 @Column({nullable: true})
 setName: string;
