@@ -8,8 +8,16 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-
- 
+import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
+import { EmployeesList, EmployeesCreate, EmployeesEdit} from "./resources/Employees";
+import { EvaluationsList, EvaluationsCreate, EvaluationsEdit} from "./resources/Evaluations";
+import { PayrollList, PayrollCreate, PayrollEdit} from "./resources/Payroll";
+import { LeaveRequestsList, LeaveRequestsCreate, LeaveRequestsEdit} from "./resources/LeaveRequests";
+import UsersIcon from "@mui/icons-material/AccountBox";
+import EmployeesIcon from "@mui/icons-material/People";
+import EvaluationsIcon from "@mui/icons-material/BarChart";
+import PayrollIcon from "@mui/icons-material/AttachMoney";
+import LeaveRequestsIcon from "@mui/icons-material/FlightTakeoff"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -71,7 +79,36 @@ const App = () => (
         dashboard={Dashboard}
         
       >
-    
+    <Resource name="Users" options={{label:"users"}} 
+list={UsersList}
+create={UsersCreate}
+edit={UsersEdit}
+recordRepresentation="userID"
+icon={UsersIcon}/>
+<Resource name="Employees" options={{label:"employees"}} 
+list={EmployeesList}
+create={EmployeesCreate}
+edit={EmployeesEdit}
+recordRepresentation="employeeID"
+icon={EmployeesIcon}/>
+<Resource name="Evaluations" options={{label:"evaluations"}} 
+list={EvaluationsList}
+create={EvaluationsCreate}
+edit={EvaluationsEdit}
+recordRepresentation="reviewID"
+icon={EvaluationsIcon}/>
+<Resource name="Payroll" options={{label:"payroll"}} 
+list={PayrollList}
+create={PayrollCreate}
+edit={PayrollEdit}
+recordRepresentation="payrollID"
+icon={PayrollIcon}/>
+<Resource name="LeaveRequests" options={{label:"leaveRequests"}} 
+list={LeaveRequestsList}
+create={LeaveRequestsCreate}
+edit={LeaveRequestsEdit}
+recordRepresentation="requestID"
+icon={LeaveRequestsIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
