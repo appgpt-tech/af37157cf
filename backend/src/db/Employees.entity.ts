@@ -6,58 +6,73 @@ export class EmployeesEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-employeeID: string;
+  @Column("text",{nullable: true})
+employeeId: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 firstName: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 lastName: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 middleName: string;
 
-@Column({nullable: true})
-dateOfBirth: string;
+@Column("date",{nullable: true})
+dateOfBirth: Date;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 gender: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 nationality: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 maritalStatus: string;
 
-@Column({nullable: true})
-contactInformation: string;
+@Column("text",{nullable: true})
+email: string;
 
-@Column({nullable: true})
-address: string;
+@Column("text",{nullable: true})
+phoneNumber: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
+street: string;
+
+@Column("text",{nullable: true})
+city: string;
+
+@Column("text",{nullable: true})
+state: string;
+
+@Column("text",{nullable: true})
+zipCode: string;
+
+@Column("text",{nullable: true})
+country: string;
+
+@Column("text",{nullable: true})
 departmentTeam: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 positionRole: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 managerSupervisor: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 employmentType: string;
 
-@Column({nullable: true})
-startDate: string;
+@Column("date",{nullable: true})
+startDate: Date;
 
-@Column({nullable: true})
-endDate: string;
+@Column("date",{nullable: true})
+endDate: Date;
 
-@Column({nullable: true})
-salaryInformation: string;
+@Column("real",{nullable: true})
+salaryInformation: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 profilePicture: string;
 
 
