@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -41,21 +51,20 @@ const ListActions = () => (
 );
 const LeaveRequestsTitle = () => {
   const record = useRecordContext();
-  return <span>LeaveRequests {record ? `"${ record.requestID }"` : ""}</span>;
+  return <span>LeaveRequests {record ? `"${ record.requestId }"` : ""}</span>;
 };
 
 export const LeaveRequestsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="requestID" />
-<TextField source="employeeID" />
+          <TextField source="requestId" />
+<ReferenceField source="employeeId" reference="Employees"  />
 <TextField source="typeOfLeave" />
 <DateField source="startDate" />
 <DateField source="endDate" />
-<TextField source="reason" />
+
 <TextField source="approvalStatus" />
-<TextField source="approverUserID" />
-<NumberField source="id" /><EditButton />
+<ReferenceField source="approverUserId" reference="Users"  /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -64,15 +73,14 @@ export const LeaveRequestsList = () => (
 export const LeaveRequestsEdit = () => (
                     <Edit title={<LeaveRequestsTitle />}>
                       <SimpleForm>
-                          <TextInput source="requestID"   />
-<TextInput source="employeeID"   />
+                          <TextInput source="requestId"   />
+<ReferenceInput source="employeeId"  reference="Employees"   />
 <TextInput source="typeOfLeave"   />
 <DateInput source="startDate"   />
 <DateInput source="endDate"   />
 <TextInput source="reason"   />
 <TextInput source="approvalStatus"   />
-<TextInput source="approverUserID"   />
-<NumberInput source="id"   disabled/>
+<ReferenceInput source="approverUserId"  reference="Users"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -80,15 +88,14 @@ export const LeaveRequestsEdit = () => (
 export const LeaveRequestsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="requestID"   />
-<TextInput source="employeeID"   />
+                                        <TextInput source="requestId"   />
+<ReferenceInput source="employeeId"  reference="Employees"   />
 <TextInput source="typeOfLeave"   />
 <DateInput source="startDate"   />
 <DateInput source="endDate"   />
 <TextInput source="reason"   />
 <TextInput source="approvalStatus"   />
-<TextInput source="approverUserID"   />
-<NumberInput source="id"   disabled/>
+<ReferenceInput source="approverUserId"  reference="Users"   />
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -96,13 +103,13 @@ export const LeaveRequestsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
+<ReferenceInput source="employeeId" label="employeeId" reference="Employees"   alwaysOn/>,
 ,
 ,
 ,
 ,
 ,
-,
-,
+<ReferenceInput source="approverUserId" label="approverUserId" reference="Users"   alwaysOn/>,
 
     ];
 
