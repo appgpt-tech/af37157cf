@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -47,10 +57,9 @@ const UsersTitle = () => {
 export const UsersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="userId" />
-<TextField source="email" />
-<TextField source="name" />
-<NumberField source="id" /><EditButton />
+          <TextField source="userId" />
+<EmailField source="email" />
+<TextField source="name" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -59,10 +68,9 @@ export const UsersList = () => (
 export const UsersEdit = () => (
                     <Edit title={<UsersTitle />}>
                       <SimpleForm>
-                          <NumberInput source="userId"   />
+                          <TextInput source="userId"   />
 <TextInput source="email"   />
 <TextInput source="name"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -70,10 +78,9 @@ export const UsersEdit = () => (
 export const UsersCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="userId"   />
+                                        <TextInput source="userId"   />
 <TextInput source="email"   />
 <TextInput source="name"   />
-<NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
                                 );
