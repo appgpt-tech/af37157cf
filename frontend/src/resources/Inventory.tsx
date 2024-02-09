@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -49,8 +59,7 @@ export const InventoryList = () => (
         <DatagridConfigurable>
           <ReferenceField source="userId" reference="Users"  />
 <ReferenceField source="cardId" reference="Cards"  />
-<DateField source="recordedDate" />
-<NumberField source="id" /><EditButton />
+<DateField source="recordedDate" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -62,7 +71,6 @@ export const InventoryEdit = () => (
                           <ReferenceInput source="userId"  reference="Users"   />
 <ReferenceInput source="cardId"  reference="Cards"   />
 <DateInput source="recordedDate"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -73,7 +81,6 @@ export const InventoryCreate = () => (
                                         <ReferenceInput source="userId"  reference="Users"   />
 <ReferenceInput source="cardId"  reference="Cards"   />
 <DateInput source="recordedDate"   />
-<NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
                                 );
