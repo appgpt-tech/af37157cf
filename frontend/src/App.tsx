@@ -1,7 +1,7 @@
 
 // in src/App.tsx
 import { Admin, Resource, CustomRoutes } from "react-admin";
-import postgrestRestProvider from "@promitheus/ra-data-postgrest";
+import { customDataProvider } from "./dataProvider";
 import fakeDataProvider from "ra-data-fakerest";
 import { Dashboard } from "./dashboard";
 import { authProvider, apInitialize } from "./authProvider";
@@ -56,7 +56,7 @@ apInitialize(Session);
 // END SUPERTOKENS
 let dataProvider: any;
 if (import.meta.env.VITE_USE_BACKEND_DATA === "true") {
-  dataProvider = postgrestRestProvider(
+  dataProvider = customDataProvider(
     import.meta.env.VITE_BACKEND_DOMAIN +
       import.meta.env.VITE_BACKEND_APIPATH +
       "/proxy"
