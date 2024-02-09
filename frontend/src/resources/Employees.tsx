@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -41,13 +51,13 @@ const ListActions = () => (
 );
 const EmployeesTitle = () => {
   const record = useRecordContext();
-  return <span>Employees {record ? `"${ record.employeeID }"` : ""}</span>;
+  return <span>Employees {record ? `"${ record.employeeId }"` : ""}</span>;
 };
 
 export const EmployeesList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="employeeID" />
+          <TextField source="employeeId" />
 <TextField source="firstName" />
 <TextField source="lastName" />
 <TextField source="middleName" />
@@ -55,17 +65,21 @@ export const EmployeesList = () => (
 <TextField source="gender" />
 <TextField source="nationality" />
 <TextField source="maritalStatus" />
-<TextField source="contactInformation" />
-<TextField source="address" />
+<EmailField source="email" />
+<TextField source="phoneNumber" />
+<TextField source="street" />
+<TextField source="city" />
+<TextField source="state" />
+<TextField source="zipCode" />
+<TextField source="country" />
 <TextField source="departmentTeam" />
 <TextField source="positionRole" />
 <TextField source="managerSupervisor" />
 <TextField source="employmentType" />
 <DateField source="startDate" />
 <DateField source="endDate" />
-<TextField source="salaryInformation" />
-<TextField source="profilePicture" />
-<NumberField source="id" /><EditButton />
+<NumberField source="salaryInformation" />
+<ImageField source="profilePicture" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -74,7 +88,7 @@ export const EmployeesList = () => (
 export const EmployeesEdit = () => (
                     <Edit title={<EmployeesTitle />}>
                       <SimpleForm>
-                          <TextInput source="employeeID"   />
+                          <TextInput source="employeeId"   />
 <TextInput source="firstName"   />
 <TextInput source="lastName"   />
 <TextInput source="middleName"   />
@@ -82,17 +96,21 @@ export const EmployeesEdit = () => (
 <TextInput source="gender"   />
 <TextInput source="nationality"   />
 <TextInput source="maritalStatus"   />
-<TextInput source="contactInformation"   />
-<TextInput source="address"   />
+<TextInput source="email"   />
+<TextInput source="phoneNumber"   />
+<TextInput source="street"   />
+<TextInput source="city"   />
+<TextInput source="state"   />
+<TextInput source="zipCode"   />
+<TextInput source="country"   />
 <TextInput source="departmentTeam"   />
 <TextInput source="positionRole"   />
 <TextInput source="managerSupervisor"   />
 <TextInput source="employmentType"   />
 <DateInput source="startDate"   />
 <DateInput source="endDate"   />
-<TextInput source="salaryInformation"   />
-<TextInput source="profilePicture"   />
-<NumberInput source="id"   disabled/>
+<NumberInput source="salaryInformation"   />
+<ImageInput source="profilePicture"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -100,7 +118,7 @@ export const EmployeesEdit = () => (
 export const EmployeesCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="employeeID"   />
+                                        <TextInput source="employeeId"   />
 <TextInput source="firstName"   />
 <TextInput source="lastName"   />
 <TextInput source="middleName"   />
@@ -108,23 +126,32 @@ export const EmployeesCreate = () => (
 <TextInput source="gender"   />
 <TextInput source="nationality"   />
 <TextInput source="maritalStatus"   />
-<TextInput source="contactInformation"   />
-<TextInput source="address"   />
+<TextInput source="email"   />
+<TextInput source="phoneNumber"   />
+<TextInput source="street"   />
+<TextInput source="city"   />
+<TextInput source="state"   />
+<TextInput source="zipCode"   />
+<TextInput source="country"   />
 <TextInput source="departmentTeam"   />
 <TextInput source="positionRole"   />
 <TextInput source="managerSupervisor"   />
 <TextInput source="employmentType"   />
 <DateInput source="startDate"   />
 <DateInput source="endDate"   />
-<TextInput source="salaryInformation"   />
-<TextInput source="profilePicture"   />
-<NumberInput source="id"   disabled/>
+<NumberInput source="salaryInformation"   />
+<ImageInput source="profilePicture"   />
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+,
+,
+,
+,
 ,
 ,
 ,
