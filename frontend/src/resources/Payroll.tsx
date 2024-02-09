@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -41,22 +51,22 @@ const ListActions = () => (
 );
 const PayrollTitle = () => {
   const record = useRecordContext();
-  return <span>Payroll {record ? `"${ record.payrollID }"` : ""}</span>;
+  return <span>Payroll {record ? `"${ record.payrollId }"` : ""}</span>;
 };
 
 export const PayrollList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="payrollID" />
-<TextField source="employeeID" />
-<TextField source="period" />
+          <TextField source="payrollId" />
+<ReferenceField source="employeeId" reference="Employees"  />
+<DateField source="periodStartDate" />
+<DateField source="periodEndDate" />
 <NumberField source="grossSalary" />
-<TextField source="deductions" />
+<NumberField source="deductions" />
 <NumberField source="netSalary" />
 <DateField source="payDate" />
 <NumberField source="overtimeHours" />
-<NumberField source="overtimePay" />
-<NumberField source="id" /><EditButton />
+<NumberField source="overtimePay" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -65,16 +75,16 @@ export const PayrollList = () => (
 export const PayrollEdit = () => (
                     <Edit title={<PayrollTitle />}>
                       <SimpleForm>
-                          <TextInput source="payrollID"   />
-<TextInput source="employeeID"   />
-<TextInput source="period"   />
+                          <TextInput source="payrollId"   />
+<ReferenceInput source="employeeId"  reference="Employees"   />
+<DateInput source="periodStartDate"   />
+<DateInput source="periodEndDate"   />
 <NumberInput source="grossSalary"   />
-<TextInput source="deductions"   />
+<NumberInput source="deductions"   />
 <NumberInput source="netSalary"   />
 <DateInput source="payDate"   />
 <NumberInput source="overtimeHours"   />
 <NumberInput source="overtimePay"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -82,16 +92,16 @@ export const PayrollEdit = () => (
 export const PayrollCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="payrollID"   />
-<TextInput source="employeeID"   />
-<TextInput source="period"   />
+                                        <TextInput source="payrollId"   />
+<ReferenceInput source="employeeId"  reference="Employees"   />
+<DateInput source="periodStartDate"   />
+<DateInput source="periodEndDate"   />
 <NumberInput source="grossSalary"   />
-<TextInput source="deductions"   />
+<NumberInput source="deductions"   />
 <NumberInput source="netSalary"   />
 <DateInput source="payDate"   />
 <NumberInput source="overtimeHours"   />
 <NumberInput source="overtimePay"   />
-<NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -99,6 +109,7 @@ export const PayrollCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
+<ReferenceInput source="employeeId" label="employeeId" reference="Employees"   alwaysOn/>,
 ,
 ,
 ,
