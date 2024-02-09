@@ -61,16 +61,11 @@ export const CustomersList = () => (
 <EmailField source="email" />
 <ReadOnlyPasswordField source="password" />
 <TextField source="name" />
-<NumberField source="age" />
-<TextField source="gender" />
-<NumberField source="weight" />
-<NumberField source="height" />
-
-
 
 
 <TextField source="country" />
-<TextField source="phone" /><EditButton />
+<TextField source="phone" />
+<TextField source="cartId" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -83,16 +78,11 @@ export const CustomersEdit = () => (
 <TextInput source="email"   />
 <PasswordInput source="password"   />
 <TextInput source="name"   />
-<NumberInput source="age"   />
-<TextInput source="gender"   />
-<NumberInput source="weight"   />
-<NumberInput source="height"   />
-<TextInput source="healthConditions"   />
-<TextInput source="goals"   />
-<TextInput source="dietaryPreferences"   />
 <TextInput source="billingAddress"   />
+<TextInput source="defaultShippingAddress"   />
 <TextInput source="country"   />
 <TextInput source="phone"   />
+<TextInput source="cartId"   />
                       </SimpleForm>
                     </Edit>
                   );
@@ -104,27 +94,17 @@ export const CustomersCreate = () => (
 <TextInput source="email"   />
 <PasswordInput source="password"   />
 <TextInput source="name"   />
-<NumberInput source="age"   />
-<TextInput source="gender"   />
-<NumberInput source="weight"   />
-<NumberInput source="height"   />
-<TextInput source="healthConditions"   />
-<TextInput source="goals"   />
-<TextInput source="dietaryPreferences"   />
 <TextInput source="billingAddress"   />
+<TextInput source="defaultShippingAddress"   />
 <TextInput source="country"   />
 <TextInput source="phone"   />
+<TextInput source="cartId"   />
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
-,
-,
-,
-,
 ,
 ,
 ,
