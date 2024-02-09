@@ -23,14 +23,24 @@ import {
   //Input controls
   BooleanInput,
   DateInput,
-  //EmailInput,
+  EmailInput,
   ImageInput,
   NumberInput,
   ReferenceInput,
   TextInput,
-  //UrlInput,
+  UrlInput,
+  PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+const ReadOnlyPasswordField = ({ record, source }) => {
+
+  // You can customize the way you display the password here, e.g., mask it with asterisks
+  const maskedPassword =  '********';
+
+  return (
+      <span>{maskedPassword}</span>
+  );
+};
 const ListActions = () => (
     <TopToolbar>
         <FilterButton />
@@ -41,22 +51,22 @@ const ListActions = () => (
 );
 const EvaluationsTitle = () => {
   const record = useRecordContext();
-  return <span>Evaluations {record ? `"${ record.reviewID }"` : ""}</span>;
+  return <span>Evaluations {record ? `"${ record.reviewId }"` : ""}</span>;
 };
 
 export const EvaluationsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="reviewID" />
-<TextField source="employeeID" />
-<TextField source="period" />
-<TextField source="goalsObjectives" />
-<TextField source="achievements" />
-<TextField source="improvementAreas" />
-<TextField source="feedbackFromSupervisor" />
+          <TextField source="reviewId" />
+<ReferenceField source="employeeId" reference="Employees"  />
+<DateField source="periodStartDate" />
+<DateField source="periodEndDate" />
+
+
+
+
 <NumberField source="overallRating" />
-<TextField source="recommendations" />
-<NumberField source="id" /><EditButton />
+<EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -65,16 +75,16 @@ export const EvaluationsList = () => (
 export const EvaluationsEdit = () => (
                     <Edit title={<EvaluationsTitle />}>
                       <SimpleForm>
-                          <TextInput source="reviewID"   />
-<TextInput source="employeeID"   />
-<TextInput source="period"   />
+                          <TextInput source="reviewId"   />
+<ReferenceInput source="employeeId"  reference="Employees"   />
+<DateInput source="periodStartDate"   />
+<DateInput source="periodEndDate"   />
 <TextInput source="goalsObjectives"   />
 <TextInput source="achievements"   />
 <TextInput source="improvementAreas"   />
 <TextInput source="feedbackFromSupervisor"   />
 <NumberInput source="overallRating"   />
 <TextInput source="recommendations"   />
-<NumberInput source="id"   disabled/>
                       </SimpleForm>
                     </Edit>
                   );
@@ -82,16 +92,16 @@ export const EvaluationsEdit = () => (
 export const EvaluationsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <TextInput source="reviewID"   />
-<TextInput source="employeeID"   />
-<TextInput source="period"   />
+                                        <TextInput source="reviewId"   />
+<ReferenceInput source="employeeId"  reference="Employees"   />
+<DateInput source="periodStartDate"   />
+<DateInput source="periodEndDate"   />
 <TextInput source="goalsObjectives"   />
 <TextInput source="achievements"   />
 <TextInput source="improvementAreas"   />
 <TextInput source="feedbackFromSupervisor"   />
 <NumberInput source="overallRating"   />
 <TextInput source="recommendations"   />
-<NumberInput source="id"   disabled/>
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -99,6 +109,7 @@ export const EvaluationsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
+<ReferenceInput source="employeeId" label="employeeId" reference="Employees"   alwaysOn/>,
 ,
 ,
 ,
