@@ -6,31 +6,34 @@ export class EvaluationsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-reviewID: string;
+  @Column("text",{nullable: true})
+reviewId: string;
 
-@Column({nullable: true})
-employeeID: string;
+@Column("integer",{nullable: true})
+employeeId: number;
 
-@Column({nullable: true})
-period: string;
+@Column("date",{nullable: true})
+periodStartDate: Date;
 
-@Column({nullable: true})
+@Column("date",{nullable: true})
+periodEndDate: Date;
+
+@Column("text",{nullable: true})
 goalsObjectives: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 achievements: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 improvementAreas: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 feedbackFromSupervisor: string;
 
-@Column({nullable: true})
-overallRating: string;
+@Column("integer",{nullable: true})
+overallRating: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 recommendations: string;
 
 
