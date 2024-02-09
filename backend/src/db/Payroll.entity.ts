@@ -6,32 +6,35 @@ export class PayrollEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-payrollID: string;
+  @Column("text",{nullable: true})
+payrollId: string;
 
-@Column({nullable: true})
-employeeID: string;
+@Column("integer",{nullable: true})
+employeeId: number;
 
-@Column({nullable: true})
-period: string;
+@Column("date",{nullable: true})
+periodStartDate: Date;
 
-@Column({nullable: true})
-grossSalary: string;
+@Column("date",{nullable: true})
+periodEndDate: Date;
 
-@Column({nullable: true})
-deductions: string;
+@Column("real",{nullable: true})
+grossSalary: number;
 
-@Column({nullable: true})
-netSalary: string;
+@Column("real",{nullable: true})
+deductions: number;
 
-@Column({nullable: true})
-payDate: string;
+@Column("real",{nullable: true})
+netSalary: number;
 
-@Column({nullable: true})
-overtimeHours: string;
+@Column("date",{nullable: true})
+payDate: Date;
 
-@Column({nullable: true})
-overtimePay: string;
+@Column("real",{nullable: true})
+overtimeHours: number;
+
+@Column("real",{nullable: true})
+overtimePay: number;
 
 
 }
