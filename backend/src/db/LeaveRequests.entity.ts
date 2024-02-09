@@ -6,29 +6,29 @@ export class LeaveRequestsEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column({nullable: true})
-requestID: string;
+  @Column("text",{nullable: true})
+requestId: string;
 
-@Column({nullable: true})
-employeeID: string;
+@Column("integer",{nullable: true})
+employeeId: number;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 typeOfLeave: string;
 
-@Column({nullable: true})
-startDate: string;
+@Column("date",{nullable: true})
+startDate: Date;
 
-@Column({nullable: true})
-endDate: string;
+@Column("date",{nullable: true})
+endDate: Date;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 reason: string;
 
-@Column({nullable: true})
+@Column("text",{nullable: true})
 approvalStatus: string;
 
-@Column({nullable: true})
-approverUserID: string;
+@Column("integer",{nullable: true})
+approverUserId: number;
 
 
 }
