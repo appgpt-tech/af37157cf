@@ -32,6 +32,7 @@ import {
   PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+import { Grid } from '@mui/material';
 const ReadOnlyPasswordField = ({ record, source }) => {
 
   // You can customize the way you display the password here, e.g., mask it with asterisks
@@ -51,20 +52,19 @@ const ListActions = () => (
 );
 const CardsTitle = () => {
   const record = useRecordContext();
-  return <span>Cards {record ? `"${ record.cardId }"` : ""}</span>;
+  return <span>Cards {record ? `"${ record.cardName }"` : ""}</span>;
 };
 
 export const CardsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="cardId" />
-<ReferenceField source="setId" reference="Sets"  />
-<TextField source="cardName" />
+          <TextField source="cardName" />
 <TextField source="serial" />
 <TextField source="type" />
 <TextField source="rarity" />
 <TextField source="condition" />
-<ImageField source="imageUrl" /><EditButton />
+<ImageField source="imageUrl" />
+<ReferenceField source="set" reference="Sets"  /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -73,14 +73,22 @@ export const CardsList = () => (
 export const CardsEdit = () => (
                     <Edit title={<CardsTitle />}>
                       <SimpleForm>
-                          <NumberInput source="cardId"   />
-<ReferenceInput source="setId"  reference="Sets"   />
-<TextInput source="cardName"   />
-<TextInput source="serial"   />
-<TextInput source="type"   />
-<TextInput source="rarity"   />
-<TextInput source="condition"   />
-<ImageInput source="imageUrl"   />
+                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                          <Grid item xs={4}>
+<TextInput source="cardName"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="serial"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="type"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="rarity"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="condition"   /></Grid>
+<Grid item xs={4}>
+<ImageInput source="imageUrl"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="set"  reference="Sets"   /></Grid>
+                        </Grid>
                       </SimpleForm>
                     </Edit>
                   );
@@ -88,14 +96,22 @@ export const CardsEdit = () => (
 export const CardsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="cardId"   />
-<ReferenceInput source="setId"  reference="Sets"   />
-<TextInput source="cardName"   />
-<TextInput source="serial"   />
-<TextInput source="type"   />
-<TextInput source="rarity"   />
-<TextInput source="condition"   />
-<ImageInput source="imageUrl"   />
+                                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                                        <Grid item xs={4}>
+<TextInput source="cardName"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="serial"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="type"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="rarity"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="condition"   /></Grid>
+<Grid item xs={4}>
+<ImageInput source="imageUrl"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="set"  reference="Sets"   /></Grid>
+                                      </Grid>
                                     </SimpleForm>
                                   </Create>
                                 );
@@ -103,13 +119,12 @@ export const CardsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-<ReferenceInput source="setId" label="setId" reference="Sets"   alwaysOn/>,
 ,
 ,
 ,
 ,
 ,
-,
+<ReferenceInput source="set" label="set" reference="Sets"   alwaysOn/>,
 
     ];
 
