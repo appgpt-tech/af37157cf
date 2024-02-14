@@ -14,9 +14,9 @@ import { SetsList, SetsCreate, SetsEdit} from "./resources/Sets";
 import { InventoryList, InventoryCreate, InventoryEdit} from "./resources/Inventory";
 import { WishlistList, WishlistCreate, WishlistEdit} from "./resources/Wishlist";
 import UsersIcon from "@mui/icons-material/Person";
-import CardsIcon from "@mui/icons-material/Collections";
+import CardsIcon from "@mui/icons-material/CollectionsBookmark";
 import SetsIcon from "@mui/icons-material/Category";
-import InventoryIcon from "@mui/icons-material/Inventory";
+import InventoryIcon from "@mui/icons-material/Inventory2";
 import WishlistIcon from "@mui/icons-material/Favorite"; 
 // SUPERTOKENS
 import React from "react";
@@ -83,31 +83,31 @@ const App = () => (
 list={UsersList}
 create={UsersCreate}
 edit={UsersEdit}
-recordRepresentation="userId"
+recordRepresentation="userName"
 icon={UsersIcon}/>
 <Resource name="Cards" options={{label:"Cards"}} 
 list={CardsList}
 create={CardsCreate}
 edit={CardsEdit}
-recordRepresentation="cardId"
+recordRepresentation="cardName"
 icon={CardsIcon}/>
 <Resource name="Sets" options={{label:"Sets"}} 
 list={SetsList}
 create={SetsCreate}
 edit={SetsEdit}
-recordRepresentation="setId"
+recordRepresentation="setName"
 icon={SetsIcon}/>
 <Resource name="Inventory" options={{label:"Inventory"}} 
 list={InventoryList}
 create={InventoryCreate}
 edit={InventoryEdit}
-recordRepresentation="userId"
+recordRepresentation="user"
 icon={InventoryIcon}/>
 <Resource name="Wishlist" options={{label:"Wishlist"}} 
 list={WishlistList}
 create={WishlistCreate}
 edit={WishlistEdit}
-recordRepresentation="userId"
+recordRepresentation="user"
 icon={WishlistIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
