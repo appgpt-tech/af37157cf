@@ -32,6 +32,7 @@ import {
   PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+import { Grid } from '@mui/material';
 const ReadOnlyPasswordField = ({ record, source }) => {
 
   // You can customize the way you display the password here, e.g., mask it with asterisks
@@ -51,15 +52,15 @@ const ListActions = () => (
 );
 const WishlistTitle = () => {
   const record = useRecordContext();
-  return <span>Wishlist {record ? `"${ record.userId }"` : ""}</span>;
+  return <span>Wishlist {record ? `"${ record.user }"` : ""}</span>;
 };
 
 export const WishlistList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <ReferenceField source="userId" reference="Users"  />
-<ReferenceField source="cardId" reference="Cards"  />
-<DateField source="insertedDate" /><EditButton />
+          <ReferenceField source="user" reference="Users"  />
+<ReferenceField source="card" reference="Cards"  />
+<DateField source="dateInserted" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -68,9 +69,14 @@ export const WishlistList = () => (
 export const WishlistEdit = () => (
                     <Edit title={<WishlistTitle />}>
                       <SimpleForm>
-                          <ReferenceInput source="userId"  reference="Users"   />
-<ReferenceInput source="cardId"  reference="Cards"   />
-<DateInput source="insertedDate"   />
+                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                          <Grid item xs={4}>
+<ReferenceInput source="user"  reference="Users"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="card"  reference="Cards"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="dateInserted"   /></Grid>
+                        </Grid>
                       </SimpleForm>
                     </Edit>
                   );
@@ -78,17 +84,22 @@ export const WishlistEdit = () => (
 export const WishlistCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <ReferenceInput source="userId"  reference="Users"   />
-<ReferenceInput source="cardId"  reference="Cards"   />
-<DateInput source="insertedDate"   />
+                                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                                        <Grid item xs={4}>
+<ReferenceInput source="user"  reference="Users"   /></Grid>
+<Grid item xs={4}>
+<ReferenceInput source="card"  reference="Cards"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="dateInserted"   /></Grid>
+                                      </Grid>
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-<ReferenceInput source="userId" label="userId" reference="Users"   alwaysOn/>,
-<ReferenceInput source="cardId" label="cardId" reference="Cards"   alwaysOn/>,
+<ReferenceInput source="user" label="user" reference="Users"   alwaysOn/>,
+<ReferenceInput source="card" label="card" reference="Cards"   alwaysOn/>,
 ,
 
     ];
