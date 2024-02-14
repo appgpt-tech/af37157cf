@@ -32,6 +32,7 @@ import {
   PasswordInput
 } from "react-admin";
 import { useRecordContext } from "react-admin";
+import { Grid } from '@mui/material';
 const ReadOnlyPasswordField = ({ record, source }) => {
 
   // You can customize the way you display the password here, e.g., mask it with asterisks
@@ -51,14 +52,13 @@ const ListActions = () => (
 );
 const SetsTitle = () => {
   const record = useRecordContext();
-  return <span>Sets {record ? `"${ record.setId }"` : ""}</span>;
+  return <span>Sets {record ? `"${ record.setName }"` : ""}</span>;
 };
 
 export const SetsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="setId" />
-<TextField source="setName" />
+          <TextField source="setName" />
 <DateField source="releaseDate" />
 <NumberField source="totalCards" /><EditButton />
 
@@ -69,10 +69,14 @@ export const SetsList = () => (
 export const SetsEdit = () => (
                     <Edit title={<SetsTitle />}>
                       <SimpleForm>
-                          <NumberInput source="setId"   />
-<TextInput source="setName"   />
-<DateInput source="releaseDate"   />
-<NumberInput source="totalCards"   />
+                        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                          <Grid item xs={4}>
+<TextInput source="setName"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="releaseDate"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="totalCards"   /></Grid>
+                        </Grid>
                       </SimpleForm>
                     </Edit>
                   );
@@ -80,17 +84,20 @@ export const SetsEdit = () => (
 export const SetsCreate = () => (
                                   <Create>
                                     <SimpleForm>
-                                        <NumberInput source="setId"   />
-<TextInput source="setName"   />
-<DateInput source="releaseDate"   />
-<NumberInput source="totalCards"   />
+                                      <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
+                                        <Grid item xs={4}>
+<TextInput source="setName"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="releaseDate"   /></Grid>
+<Grid item xs={4}>
+<NumberInput source="totalCards"   /></Grid>
+                                      </Grid>
                                     </SimpleForm>
                                   </Create>
                                 );
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
 ,
 ,
 ,
