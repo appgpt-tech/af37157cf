@@ -51,7 +51,7 @@ const ListActions = () => (
 );
 const InventoryTitle = () => {
   const record = useRecordContext();
-  return <span>Inventory {record ? `"${record.card}"` : ""}</span>;
+  return <span>Inventory {record ? `"${record.user}"` : ""}</span>;
 };
 
 export const InventoryList = () => (
