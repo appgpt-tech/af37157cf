@@ -24,7 +24,7 @@ import {
 } from "./resources/Wishlist";
 import UsersIcon from "@mui/icons-material/Person";
 import CardsIcon from "@mui/icons-material/CardMembership";
-import SetsIcon from "@mui/icons-material/PlaylistAddCheck";
+import SetsIcon from "@mui/icons-material/Collections";
 import InventoryIcon from "@mui/icons-material/Inventory";
 import WishlistIcon from "@mui/icons-material/Favorite";
 // SUPERTOKENS
@@ -120,7 +120,7 @@ const App = () => (
           list={InventoryList}
           create={InventoryCreate}
           edit={InventoryEdit}
-          recordRepresentation="card"
+          recordRepresentation="user"
           icon={InventoryIcon}
         />
         <Resource
@@ -129,7 +129,7 @@ const App = () => (
           list={WishlistList}
           create={WishlistCreate}
           edit={WishlistEdit}
-          recordRepresentation="card"
+          recordRepresentation="user"
           icon={WishlistIcon}
         />
         <CustomRoutes noLayout>
