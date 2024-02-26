@@ -99,7 +99,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
     {
-      field: "insertedDate",
+      field: "dateInserted",
       datatype: "DateTime",
     },
     {
