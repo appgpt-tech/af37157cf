@@ -51,7 +51,7 @@ const ListActions = () => (
 );
 const WishlistTitle = () => {
   const record = useRecordContext();
-  return <span>Wishlist {record ? `"${record.card}"` : ""}</span>;
+  return <span>Wishlist {record ? `"${record.user}"` : ""}</span>;
 };
 
 export const WishlistList = () => (
@@ -59,7 +59,7 @@ export const WishlistList = () => (
     <DatagridConfigurable>
       <ReferenceField source="user" reference="Users" />
       <ReferenceField source="card" reference="Cards" />
-      <DateField source="insertedDate" />
+      <DateField source="dateInserted" />
       <EditButton />
     </DatagridConfigurable>
   </List>
@@ -76,7 +76,7 @@ export const WishlistEdit = () => (
           <ReferenceInput source="card" reference="Cards" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="insertedDate" />
+          <DateInput source="dateInserted" />
         </Grid>
       </Grid>
     </SimpleForm>
@@ -94,7 +94,7 @@ export const WishlistCreate = () => (
           <ReferenceInput source="card" reference="Cards" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="insertedDate" />
+          <DateInput source="dateInserted" />
         </Grid>
       </Grid>
     </SimpleForm>
