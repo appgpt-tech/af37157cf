@@ -15,5 +15,5 @@ export class WishlistEntity {
   card: number;
 
   @Column("date", { nullable: true })
-  insertedDate: Date;
+  dateInserted: Date;
 }
