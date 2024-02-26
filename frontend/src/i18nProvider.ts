@@ -43,7 +43,7 @@ const enResources = {
       fields: {
         user: "User",
         card: "Card",
-        insertedDate: "Inserted Date",
+        dateInserted: "Date Inserted",
         id: "id",
       },
     },
@@ -91,7 +91,7 @@ const frResources = {
       fields: {
         user: "User (fr)",
         card: "Card (fr)",
-        insertedDate: "Inserted Date (fr)",
+        dateInserted: "Date Inserted (fr)",
         id: "id",
       },
     },
