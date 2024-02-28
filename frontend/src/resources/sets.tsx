@@ -51,15 +51,15 @@ const ListActions = () => (
 );
 const setsTitle = () => {
   const record = useRecordContext();
-  return <span>sets {record ? `"${record.setname}"` : ""}</span>;
+  return <span>sets {record ? `"${record.id}"` : ""}</span>;
 };
 
 export const setsList = () => (
   <List actions={<ListActions />} filters={ResourceFilters}>
     <DatagridConfigurable>
-      <TextField source="setname" />
-      <DateField source="releasedate" />
-      <NumberField source="totalcards" />
+      <TextField source="SetName" />
+      <DateField source="ReleaseDate" />
+      <NumberField source="TotalCards" />
       <EditButton />
     </DatagridConfigurable>
   </List>
@@ -70,13 +70,13 @@ export const setsEdit = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="setname" />
+          <TextInput source="SetName" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="releasedate" />
+          <DateInput source="ReleaseDate" />
         </Grid>
         <Grid item xs={4}>
-          <NumberInput source="totalcards" />
+          <NumberInput source="TotalCards" />
         </Grid>
       </Grid>
     </SimpleForm>
@@ -88,13 +88,13 @@ export const setsCreate = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="setname" />
+          <TextInput source="SetName" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="releasedate" />
+          <DateInput source="ReleaseDate" />
         </Grid>
         <Grid item xs={4}>
-          <NumberInput source="totalcards" />
+          <NumberInput source="TotalCards" />
         </Grid>
       </Grid>
     </SimpleForm>
