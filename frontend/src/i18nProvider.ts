@@ -8,14 +8,14 @@ import frOriginal from "ra-language-french";
 
 const enResources = {
   resources: {
-    users: {
+    Users: {
       name: "Users",
-      fields: { UserName: "user name", email: "email", id: "id" },
+      fields: { username: "username", email: "email", id: "id" },
     },
-    cards: {
+    Cards: {
       name: "Cards",
       fields: {
-        CardName: "card name",
+        cardname: "card name",
         serial: "serial",
         type: "type",
         rarity: "rarity",
@@ -25,25 +25,25 @@ const enResources = {
         id: "id",
       },
     },
-    sets: {
+    Sets: {
       name: "Sets",
       fields: {
-        SetName: "set name",
-        ReleaseDate: "release date",
-        TotalCards: "total cards",
+        setname: "set name",
+        releasedate: "release date",
+        totalcards: "total cards",
         id: "id",
       },
     },
-    inventory: {
+    Inventory: {
       name: "Inventory",
-      fields: { user: "user", card: "card", DateAdded: "date added", id: "id" },
+      fields: { user: "user", card: "card", dateadded: "date added", id: "id" },
     },
-    wishlist: {
+    Wishlist: {
       name: "Wishlist",
       fields: {
         user: "user",
         card: "card",
-        DateInserted: "date inserted",
+        dateinserted: "date inserted",
         id: "id",
       },
     },
@@ -51,14 +51,14 @@ const enResources = {
 };
 const frResources = {
   resources: {
-    users: {
+    Users: {
       name: "Utilisateurs",
-      fields: { UserName: "nom d'utilisateur", email: "email", id: "id" },
+      fields: { username: "nom d'utilisateur", email: "email", id: "id" },
     },
-    cards: {
+    Cards: {
       name: "Cartes",
       fields: {
-        CardName: "nom de la carte",
+        cardname: "nom de la carte",
         serial: "série",
         type: "type",
         rarity: "rareté",
@@ -68,30 +68,30 @@ const frResources = {
         id: "id",
       },
     },
-    sets: {
+    Sets: {
       name: "Ensembles",
       fields: {
-        SetName: "nom de l'ensemble",
-        ReleaseDate: "date de sortie",
-        TotalCards: "total des cartes",
+        setname: "nom de l'ensemble",
+        releasedate: "date de sortie",
+        totalcards: "total des cartes",
         id: "id",
       },
     },
-    inventory: {
+    Inventory: {
       name: "Inventaire",
       fields: {
         user: "utilisateur",
         card: "carte",
-        DateAdded: "date ajoutée",
+        dateadded: "date ajoutée",
         id: "id",
       },
     },
-    wishlist: {
+    Wishlist: {
       name: "Liste de souhaits",
       fields: {
         user: "utilisateur",
         card: "carte",
-        DateInserted: "date insérée",
+        dateinserted: "date insérée",
         id: "id",
       },
     },
