@@ -5,9 +5,9 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from "qs";
 
 const fieldConfig = {
-  users: [
+  Users: [
     {
-      field: "username",
+      field: "userName",
       datatype: "String",
     },
     {
@@ -19,9 +19,9 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  cards: [
+  Cards: [
     {
-      field: "cardname",
+      field: "cardName",
       datatype: "String",
     },
     {
@@ -41,7 +41,7 @@ const fieldConfig = {
       datatype: "String",
     },
     {
-      field: "imageurl",
+      field: "imageUrl",
       datatype: "String",
     },
     {
@@ -53,17 +53,17 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  sets: [
+  Sets: [
     {
-      field: "setname",
+      field: "setName",
       datatype: "String",
     },
     {
-      field: "releasedate",
+      field: "releaseDate",
       datatype: "DateTime",
     },
     {
-      field: "totalcards",
+      field: "totalCards",
       datatype: "Integer",
     },
     {
@@ -71,7 +71,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  inventory: [
+  Inventory: [
     {
       field: "user",
       datatype: "Integer",
@@ -81,7 +81,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
     {
-      field: "recordeddate",
+      field: "dateAdded",
       datatype: "DateTime",
     },
     {
@@ -89,7 +89,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  wishlist: [
+  Wishlist: [
     {
       field: "user",
       datatype: "Integer",
@@ -99,7 +99,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
     {
-      field: "inserteddate",
+      field: "dateInserted",
       datatype: "DateTime",
     },
     {
