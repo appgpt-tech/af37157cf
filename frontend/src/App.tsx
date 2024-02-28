@@ -9,24 +9,24 @@ import { authProvider, apInitialize } from "./authProvider";
 import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
-import { UsersList, UsersCreate, UsersEdit } from "./resources/Users";
-import { CardsList, CardsCreate, CardsEdit } from "./resources/Cards";
-import { SetsList, SetsCreate, SetsEdit } from "./resources/Sets";
+import { usersList, usersCreate, usersEdit } from "./resources/users";
+import { cardsList, cardsCreate, cardsEdit } from "./resources/cards";
+import { setsList, setsCreate, setsEdit } from "./resources/sets";
 import {
-  InventoryList,
-  InventoryCreate,
-  InventoryEdit,
-} from "./resources/Inventory";
+  inventoryList,
+  inventoryCreate,
+  inventoryEdit,
+} from "./resources/inventory";
 import {
-  WishlistList,
-  WishlistCreate,
-  WishlistEdit,
-} from "./resources/Wishlist";
-import UsersIcon from "@mui/icons-material/Person";
-import CardsIcon from "@mui/icons-material/CollectionsBookmark";
-import SetsIcon from "@mui/icons-material/Category";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import WishlistIcon from "@mui/icons-material/Favorite";
+  wishlistList,
+  wishlistCreate,
+  wishlistEdit,
+} from "./resources/wishlist";
+import usersIcon from "@mui/icons-material/Person";
+import cardsIcon from "@mui/icons-material/CollectionsBookmark";
+import setsIcon from "@mui/icons-material/ViewAgenda";
+import inventoryIcon from "@mui/icons-material/Inventory2";
+import wishlistIcon from "@mui/icons-material/Favorite";
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -88,49 +88,49 @@ const App = () => (
         dashboard={Dashboard}
       >
         <Resource
-          name="Users"
+          name="users"
           options={{ label: "Users" }}
-          list={UsersList}
-          create={UsersCreate}
-          edit={UsersEdit}
-          recordRepresentation="id"
-          icon={UsersIcon}
+          list={usersList}
+          create={usersCreate}
+          edit={usersEdit}
+          recordRepresentation="username"
+          icon={usersIcon}
         />
         <Resource
-          name="Cards"
+          name="cards"
           options={{ label: "Cards" }}
-          list={CardsList}
-          create={CardsCreate}
-          edit={CardsEdit}
-          recordRepresentation="id"
-          icon={CardsIcon}
+          list={cardsList}
+          create={cardsCreate}
+          edit={cardsEdit}
+          recordRepresentation="cardname"
+          icon={cardsIcon}
         />
         <Resource
-          name="Sets"
+          name="sets"
           options={{ label: "Sets" }}
-          list={SetsList}
-          create={SetsCreate}
-          edit={SetsEdit}
-          recordRepresentation="id"
-          icon={SetsIcon}
+          list={setsList}
+          create={setsCreate}
+          edit={setsEdit}
+          recordRepresentation="setname"
+          icon={setsIcon}
         />
         <Resource
-          name="Inventory"
+          name="inventory"
           options={{ label: "Inventory" }}
-          list={InventoryList}
-          create={InventoryCreate}
-          edit={InventoryEdit}
+          list={inventoryList}
+          create={inventoryCreate}
+          edit={inventoryEdit}
           recordRepresentation="user"
-          icon={InventoryIcon}
+          icon={inventoryIcon}
         />
         <Resource
-          name="Wishlist"
+          name="wishlist"
           options={{ label: "Wishlist" }}
-          list={WishlistList}
-          create={WishlistCreate}
-          edit={WishlistEdit}
+          list={wishlistList}
+          create={wishlistCreate}
+          edit={wishlistEdit}
           recordRepresentation="user"
-          icon={WishlistIcon}
+          icon={wishlistIcon}
         />
         <CustomRoutes noLayout>
           {/*This renders the login UI on the /auth route*/}
