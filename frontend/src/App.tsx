@@ -93,7 +93,7 @@ const App = () => (
           list={UsersList}
           create={UsersCreate}
           edit={UsersEdit}
-          recordRepresentation="userName"
+          recordRepresentation="id"
           icon={UsersIcon}
         />
         <Resource
@@ -102,7 +102,7 @@ const App = () => (
           list={CardsList}
           create={CardsCreate}
           edit={CardsEdit}
-          recordRepresentation="cardName"
+          recordRepresentation="id"
           icon={CardsIcon}
         />
         <Resource
@@ -111,7 +111,7 @@ const App = () => (
           list={SetsList}
           create={SetsCreate}
           edit={SetsEdit}
-          recordRepresentation="setName"
+          recordRepresentation="id"
           icon={SetsIcon}
         />
         <Resource
