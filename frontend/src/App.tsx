@@ -16,9 +16,9 @@ import { SetsList, SetsCreate, SetsEdit} from "./resources/Sets";
 import { InventoryList, InventoryCreate, InventoryEdit} from "./resources/Inventory";
 import { WishlistList, WishlistCreate, WishlistEdit} from "./resources/Wishlist";
 import UsersIcon from "@mui/icons-material/Person";
-import CardsIcon from "@mui/icons-material/CollectionsBookmark";
-import SetsIcon from "@mui/icons-material/Category";
-import InventoryIcon from "@mui/icons-material/Inventory2";
+import CardsIcon from "@mui/icons-material/Collections";
+import SetsIcon from "@mui/icons-material/CollectionsBookmark";
+import InventoryIcon from "@mui/icons-material/Inventory";
 import WishlistIcon from "@mui/icons-material/Favorite"; 
 // SUPERTOKENS
 import React from "react";
