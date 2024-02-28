@@ -51,13 +51,13 @@ const ListActions = () => (
 );
 const UsersTitle = () => {
   const record = useRecordContext();
-  return <span>Users {record ? `"${record.userName}"` : ""}</span>;
+  return <span>Users {record ? `"${record.id}"` : ""}</span>;
 };
 
 export const UsersList = () => (
   <List actions={<ListActions />} filters={ResourceFilters}>
     <DatagridConfigurable>
-      <TextField source="userName" />
+      <TextField source="UserName" />
       <EmailField source="email" />
       <EditButton />
     </DatagridConfigurable>
@@ -69,7 +69,7 @@ export const UsersEdit = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="userName" />
+          <TextInput source="UserName" />
         </Grid>
         <Grid item xs={4}>
           <TextInput source="email" />
@@ -84,7 +84,7 @@ export const UsersCreate = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="userName" />
+          <TextInput source="UserName" />
         </Grid>
         <Grid item xs={4}>
           <TextInput source="email" />
