@@ -15,5 +15,5 @@ export class InventoryEntity {
   card: number;
 
   @Column("date", { nullable: true })
-  DateAddedToInventory: Date;
+  dateAdded: Date;
 }
