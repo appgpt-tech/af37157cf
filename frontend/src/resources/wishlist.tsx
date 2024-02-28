@@ -59,7 +59,7 @@ export const wishlistList = () => (
     <DatagridConfigurable>
       <ReferenceField source="user" reference="Users" />
       <ReferenceField source="card" reference="Cards" />
-      <DateField source="inserteddate" />
+      <DateField source="DateInserted" />
       <EditButton />
     </DatagridConfigurable>
   </List>
@@ -76,7 +76,7 @@ export const wishlistEdit = () => (
           <ReferenceInput source="card" reference="Cards" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="inserteddate" />
+          <DateInput source="DateInserted" />
         </Grid>
       </Grid>
     </SimpleForm>
@@ -94,7 +94,7 @@ export const wishlistCreate = () => (
           <ReferenceInput source="card" reference="Cards" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="inserteddate" />
+          <DateInput source="DateInserted" />
         </Grid>
       </Grid>
     </SimpleForm>
