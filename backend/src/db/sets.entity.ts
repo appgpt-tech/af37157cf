@@ -9,11 +9,11 @@ export class setsEntity {
   id: number;
 
   @Column("text", { nullable: true })
-  setname: string;
+  SetName: string;
 
   @Column("date", { nullable: true })
-  releasedate: Date;
+  ReleaseDate: Date;
 
   @Column("integer", { nullable: true })
-  totalcards: number;
+  TotalCards: number;
 }
