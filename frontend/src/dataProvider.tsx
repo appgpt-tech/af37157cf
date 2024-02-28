@@ -7,7 +7,7 @@ import qs from "qs";
 const fieldConfig = {
   Users: [
     {
-      field: "userName",
+      field: "UserName",
       datatype: "String",
     },
     {
@@ -21,7 +21,7 @@ const fieldConfig = {
   ],
   Cards: [
     {
-      field: "cardName",
+      field: "CardName",
       datatype: "String",
     },
     {
@@ -41,7 +41,7 @@ const fieldConfig = {
       datatype: "String",
     },
     {
-      field: "imageUrl",
+      field: "imageurl",
       datatype: "String",
     },
     {
@@ -55,15 +55,15 @@ const fieldConfig = {
   ],
   Sets: [
     {
-      field: "setName",
+      field: "SetName",
       datatype: "String",
     },
     {
-      field: "releaseDate",
+      field: "ReleaseDate",
       datatype: "DateTime",
     },
     {
-      field: "totalCards",
+      field: "TotalCards",
       datatype: "Integer",
     },
     {
@@ -81,7 +81,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
     {
-      field: "dateAdded",
+      field: "RecordedDate",
       datatype: "DateTime",
     },
     {
@@ -99,7 +99,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
     {
-      field: "dateInserted",
+      field: "InsertedDate",
       datatype: "DateTime",
     },
     {
