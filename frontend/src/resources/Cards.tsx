@@ -51,18 +51,18 @@ const ListActions = () => (
 );
 const CardsTitle = () => {
   const record = useRecordContext();
-  return <span>Cards {record ? `"${record.cardName}"` : ""}</span>;
+  return <span>Cards {record ? `"${record.id}"` : ""}</span>;
 };
 
 export const CardsList = () => (
   <List actions={<ListActions />} filters={ResourceFilters}>
     <DatagridConfigurable>
-      <TextField source="cardName" />
+      <TextField source="CardName" />
       <TextField source="serial" />
       <TextField source="type" />
       <TextField source="rarity" />
       <TextField source="condition" />
-      <ImageField source="imageUrl" />
+      <ImageField source="imageurl" />
       <ReferenceField source="set" reference="Sets" />
       <EditButton />
     </DatagridConfigurable>
@@ -74,7 +74,7 @@ export const CardsEdit = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="cardName" />
+          <TextInput source="CardName" />
         </Grid>
         <Grid item xs={4}>
           <TextInput source="serial" />
@@ -89,7 +89,7 @@ export const CardsEdit = () => (
           <TextInput source="condition" />
         </Grid>
         <Grid item xs={4}>
-          <ImageInput source="imageUrl" />
+          <ImageInput source="imageurl" />
         </Grid>
         <Grid item xs={4}>
           <ReferenceInput source="set" reference="Sets" />
@@ -104,7 +104,7 @@ export const CardsCreate = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="cardName" />
+          <TextInput source="CardName" />
         </Grid>
         <Grid item xs={4}>
           <TextInput source="serial" />
@@ -119,7 +119,7 @@ export const CardsCreate = () => (
           <TextInput source="condition" />
         </Grid>
         <Grid item xs={4}>
-          <ImageInput source="imageUrl" />
+          <ImageInput source="imageurl" />
         </Grid>
         <Grid item xs={4}>
           <ReferenceInput source="set" reference="Sets" />
