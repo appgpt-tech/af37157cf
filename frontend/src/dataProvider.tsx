@@ -5,9 +5,9 @@ import postgrestRestProvider from "@promitheus/ra-data-postgrest";
 import qs from "qs";
 
 const fieldConfig = {
-  Users: [
+  users: [
     {
-      field: "UserName",
+      field: "username",
       datatype: "String",
     },
     {
@@ -19,9 +19,9 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  Cards: [
+  cards: [
     {
-      field: "CardName",
+      field: "cardname",
       datatype: "String",
     },
     {
@@ -53,17 +53,17 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  Sets: [
+  sets: [
     {
-      field: "SetName",
+      field: "setname",
       datatype: "String",
     },
     {
-      field: "ReleaseDate",
+      field: "releasedate",
       datatype: "DateTime",
     },
     {
-      field: "TotalCards",
+      field: "totalcards",
       datatype: "Integer",
     },
     {
@@ -71,7 +71,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  Inventory: [
+  inventory: [
     {
       field: "user",
       datatype: "Integer",
@@ -81,7 +81,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
     {
-      field: "DateAddedToInventory",
+      field: "recordeddate",
       datatype: "DateTime",
     },
     {
@@ -89,7 +89,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
   ],
-  Wishlist: [
+  wishlist: [
     {
       field: "user",
       datatype: "Integer",
@@ -99,7 +99,7 @@ const fieldConfig = {
       datatype: "Integer",
     },
     {
-      field: "InsertedDate",
+      field: "inserteddate",
       datatype: "DateTime",
     },
     {
