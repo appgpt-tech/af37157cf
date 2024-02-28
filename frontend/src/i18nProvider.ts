@@ -8,47 +8,42 @@ import frOriginal from "ra-language-french";
 
 const enResources = {
   resources: {
-    users: {
-      name: "users",
-      fields: { username: "username", email: "email", id: "id" },
+    Users: {
+      name: "Users",
+      fields: { userName: "User Name", email: "Email", id: "id" },
     },
-    cards: {
-      name: "cards",
+    Cards: {
+      name: "Cards",
       fields: {
-        cardname: "card name",
-        serial: "serial",
-        type: "type",
-        rarity: "rarity",
-        condition: "condition",
-        imageurl: "image url",
-        set: "set",
+        cardName: "Card Name",
+        serial: "Serial",
+        type: "Type",
+        rarity: "Rarity",
+        condition: "Condition",
+        imageUrl: "Image Url",
+        set: "Set",
         id: "id",
       },
     },
-    sets: {
-      name: "sets",
+    Sets: {
+      name: "Sets",
       fields: {
-        setname: "set name",
-        releasedate: "release date",
-        totalcards: "total cards",
+        setName: "Set Name",
+        releaseDate: "Release Date",
+        totalCards: "Total Cards",
         id: "id",
       },
     },
-    inventory: {
-      name: "inventory",
-      fields: {
-        user: "user",
-        card: "card",
-        recordeddate: "recorded date",
-        id: "id",
-      },
+    Inventory: {
+      name: "Inventory",
+      fields: { user: "User", card: "Card", dateAdded: "Date Added", id: "id" },
     },
-    wishlist: {
-      name: "wishlist",
+    Wishlist: {
+      name: "Wishlist",
       fields: {
-        user: "user",
-        card: "card",
-        inserteddate: "inserted date",
+        user: "User",
+        card: "Card",
+        dateInserted: "Date Inserted",
         id: "id",
       },
     },
@@ -56,47 +51,47 @@ const enResources = {
 };
 const frResources = {
   resources: {
-    users: {
-      name: "utilisateurs",
-      fields: { username: "nom d'utilisateur", email: "email", id: "id" },
+    Users: {
+      name: "Utilisateurs",
+      fields: { userName: "Nom d'utilisateur", email: "Email", id: "id" },
     },
-    cards: {
-      name: "cartes",
+    Cards: {
+      name: "Cartes",
       fields: {
-        cardname: "nom de la carte",
-        serial: "série",
-        type: "type",
-        rarity: "rareté",
-        condition: "condition",
-        imageurl: "url de l'image",
-        set: "ensemble",
+        cardName: "Nom de la Carte",
+        serial: "Série",
+        type: "Type",
+        rarity: "Rareté",
+        condition: "Condition",
+        imageUrl: "URL de l'image",
+        set: "Set",
         id: "id",
       },
     },
-    sets: {
-      name: "ensembles",
+    Sets: {
+      name: "Ensembles",
       fields: {
-        setname: "nom de l'ensemble",
-        releasedate: "date de sortie",
-        totalcards: "total des cartes",
+        setName: "Nom de l'ensemble",
+        releaseDate: "Date de sortie",
+        totalCards: "Total des Cartes",
         id: "id",
       },
     },
-    inventory: {
-      name: "inventaire",
+    Inventory: {
+      name: "Inventaire",
       fields: {
-        user: "utilisateur",
-        card: "carte",
-        recordeddate: "date enregistrée",
+        user: "Utilisateur",
+        card: "Carte",
+        dateAdded: "Date d'ajout",
         id: "id",
       },
     },
-    wishlist: {
-      name: "liste de souhaits",
+    Wishlist: {
+      name: "Liste de souhaits",
       fields: {
-        user: "utilisateur",
-        card: "carte",
-        inserteddate: "date insérée",
+        user: "Utilisateur",
+        card: "Carte",
+        dateInserted: "Date insérée",
         id: "id",
       },
     },
