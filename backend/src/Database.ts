@@ -38,11 +38,11 @@ export class Database {
   static async Seed() {
     let data: any = {
       Users: [
-        { userName: "userName 1", email: "email 1", id: 0 },
-        { userName: "userName 2", email: "email 2", id: 52 },
-        { userName: "userName 3", email: "email 3", id: 71 },
-        { userName: "userName 4", email: "email 4", id: 92 },
-        { userName: "userName 5", email: "email 5", id: 40 },
+        { userName: "userName 1", email: "email 1", id: 53 },
+        { userName: "userName 2", email: "email 2", id: 92 },
+        { userName: "userName 3", email: "email 3", id: 30 },
+        { userName: "userName 4", email: "email 4", id: 88 },
+        { userName: "userName 5", email: "email 5", id: 18 },
       ],
       Cards: [
         {
@@ -53,7 +53,7 @@ export class Database {
           condition: "condition 1",
           imageUrl: "imageUrl 1",
           set: 1,
-          id: 68,
+          id: 84,
         },
         {
           cardName: "cardName 2",
@@ -63,7 +63,7 @@ export class Database {
           condition: "condition 2",
           imageUrl: "imageUrl 2",
           set: 2,
-          id: 39,
+          id: 40,
         },
         {
           cardName: "cardName 3",
@@ -73,7 +73,7 @@ export class Database {
           condition: "condition 3",
           imageUrl: "imageUrl 3",
           set: 3,
-          id: 85,
+          id: 22,
         },
         {
           cardName: "cardName 4",
@@ -83,7 +83,7 @@ export class Database {
           condition: "condition 4",
           imageUrl: "imageUrl 4",
           set: 4,
-          id: 55,
+          id: 53,
         },
         {
           cardName: "cardName 5",
@@ -93,54 +93,54 @@ export class Database {
           condition: "condition 5",
           imageUrl: "imageUrl 5",
           set: 5,
-          id: 88,
+          id: 32,
         },
       ],
       Sets: [
         {
           setName: "setName 1",
-          releaseDate: "2024-11-24T20:18:26.158Z",
+          releaseDate: "2024-05-03T20:45:28.067Z",
           totalCards: 1,
-          id: 38,
+          id: 73,
         },
         {
           setName: "setName 2",
-          releaseDate: "2024-01-15T09:40:31.853Z",
+          releaseDate: "2024-07-04T00:41:41.320Z",
           totalCards: 2,
-          id: 96,
+          id: 23,
         },
         {
           setName: "setName 3",
-          releaseDate: "2024-03-28T15:54:39.567Z",
+          releaseDate: "2023-08-20T22:58:53.967Z",
           totalCards: 3,
-          id: 0,
+          id: 30,
         },
         {
           setName: "setName 4",
-          releaseDate: "2024-08-27T14:36:32.228Z",
+          releaseDate: "2023-04-27T05:27:17.301Z",
           totalCards: 4,
-          id: 4,
+          id: 42,
         },
         {
           setName: "setName 5",
-          releaseDate: "2024-09-01T03:22:14.261Z",
+          releaseDate: "2024-05-18T11:48:54.395Z",
           totalCards: 5,
-          id: 53,
+          id: 9,
         },
       ],
       Inventory: [
-        { user: 1, card: 1, dateAdded: "2023-08-04T23:10:01.134Z", id: 52 },
-        { user: 2, card: 2, dateAdded: "2023-12-24T22:37:43.541Z", id: 49 },
-        { user: 3, card: 3, dateAdded: "2023-07-05T03:03:08.277Z", id: 52 },
-        { user: 4, card: 4, dateAdded: "2025-02-13T09:21:26.764Z", id: 46 },
-        { user: 5, card: 5, dateAdded: "2024-09-30T10:05:00.545Z", id: 52 },
+        { user: 1, card: 1, dateAdded: "2024-10-05T14:54:16.869Z", id: 13 },
+        { user: 2, card: 2, dateAdded: "2023-12-27T08:41:30.557Z", id: 44 },
+        { user: 3, card: 3, dateAdded: "2024-02-29T10:30:33.383Z", id: 29 },
+        { user: 4, card: 4, dateAdded: "2024-03-12T16:56:15.034Z", id: 19 },
+        { user: 5, card: 5, dateAdded: "2023-09-21T07:07:37.734Z", id: 79 },
       ],
       Wishlist: [
-        { user: 1, card: 1, dateInserted: "2023-09-21T08:48:21.445Z", id: 65 },
-        { user: 2, card: 2, dateInserted: "2023-07-11T02:49:55.209Z", id: 56 },
-        { user: 3, card: 3, dateInserted: "2024-08-15T15:55:48.601Z", id: 47 },
-        { user: 4, card: 4, dateInserted: "2023-04-19T19:08:08.785Z", id: 65 },
-        { user: 5, card: 5, dateInserted: "2024-08-03T16:18:27.224Z", id: 96 },
+        { user: 1, card: 1, dateInserted: "2024-09-10T09:26:08.462Z", id: 16 },
+        { user: 2, card: 2, dateInserted: "2024-06-19T10:15:31.121Z", id: 80 },
+        { user: 3, card: 3, dateInserted: "2024-01-01T05:02:25.749Z", id: 53 },
+        { user: 4, card: 4, dateInserted: "2024-04-25T14:49:27.052Z", id: 94 },
+        { user: 5, card: 5, dateInserted: "2023-11-30T02:36:54.521Z", id: 87 },
       ],
     };
     //Autogenerate multiple such calls ie for each resource and its data object
