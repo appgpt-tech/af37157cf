@@ -51,13 +51,13 @@ const ListActions = () => (
 );
 const cardsTitle = () => {
   const record = useRecordContext();
-  return <span>cards {record ? `"${record.cardname}"` : ""}</span>;
+  return <span>cards {record ? `"${record.id}"` : ""}</span>;
 };
 
 export const cardsList = () => (
   <List actions={<ListActions />} filters={ResourceFilters}>
     <DatagridConfigurable>
-      <TextField source="cardname" />
+      <TextField source="CardName" />
       <TextField source="serial" />
       <TextField source="type" />
       <TextField source="rarity" />
@@ -74,7 +74,7 @@ export const cardsEdit = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="cardname" />
+          <TextInput source="CardName" />
         </Grid>
         <Grid item xs={4}>
           <TextInput source="serial" />
@@ -104,7 +104,7 @@ export const cardsCreate = () => (
     <SimpleForm>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
         <Grid item xs={4}>
-          <TextInput source="cardname" />
+          <TextInput source="CardName" />
         </Grid>
         <Grid item xs={4}>
           <TextInput source="serial" />
