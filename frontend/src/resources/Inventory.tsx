@@ -59,7 +59,7 @@ export const InventoryList = () => (
     <DatagridConfigurable>
       <ReferenceField source="user" reference="Users" />
       <ReferenceField source="card" reference="Cards" />
-      <DateField source="dateAdded" />
+      <DateField source="DateAddedToInventory" />
       <EditButton />
     </DatagridConfigurable>
   </List>
@@ -76,7 +76,7 @@ export const InventoryEdit = () => (
           <ReferenceInput source="card" reference="Cards" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="dateAdded" />
+          <DateInput source="DateAddedToInventory" />
         </Grid>
       </Grid>
     </SimpleForm>
@@ -94,7 +94,7 @@ export const InventoryCreate = () => (
           <ReferenceInput source="card" reference="Cards" />
         </Grid>
         <Grid item xs={4}>
-          <DateInput source="dateAdded" />
+          <DateInput source="DateAddedToInventory" />
         </Grid>
       </Grid>
     </SimpleForm>
