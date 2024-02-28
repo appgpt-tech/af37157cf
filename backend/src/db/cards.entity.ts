@@ -9,7 +9,7 @@ export class cardsEntity {
   id: number;
 
   @Column("text", { nullable: true })
-  cardname: string;
+  CardName: string;
 
   @Column("text", { nullable: true })
   serial: string;
