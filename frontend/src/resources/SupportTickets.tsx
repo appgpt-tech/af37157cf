@@ -54,15 +54,14 @@ const ListActions = () => (
 );
 const SupportTicketsTitle = () => {
   const record = useRecordContext();
-  return <span>SupportTickets {record ? `"${ record.description }"` : ""}</span>;
+  return <span>SupportTickets {record ? `"${ record.user }"` : ""}</span>;
 };
 
 export const SupportTicketsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="ticketId" />
-<ReferenceField source="userId" reference="Users"  />
-<ReferenceField source="customerId" reference="Customers"  />
+          <ReferenceField source="user" reference="Users"  />
+<ReferenceField source="customer" reference="Customers"  />
 
 <TextField source="status" />
 <DateField source="creationDate" />
@@ -77,11 +76,9 @@ export const SupportTicketsEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<NumberInput source="ticketId"   /></Grid>
+<ReferenceInput source="user"  reference="Users"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="userId"  reference="Users"   /></Grid>
-<Grid item xs={4}>
-<ReferenceInput source="customerId"  reference="Customers"   /></Grid>
+<ReferenceInput source="customer"  reference="Customers"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="description"   /></Grid>
 <Grid item xs={4}>
@@ -100,11 +97,9 @@ export const SupportTicketsCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<NumberInput source="ticketId"   /></Grid>
+<ReferenceInput source="user"  reference="Users"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="userId"  reference="Users"   /></Grid>
-<Grid item xs={4}>
-<ReferenceInput source="customerId"  reference="Customers"   /></Grid>
+<ReferenceInput source="customer"  reference="Customers"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="description"   /></Grid>
 <Grid item xs={4}>
@@ -120,9 +115,8 @@ export const SupportTicketsCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
-<ReferenceInput source="userId" label="userId" reference="Users"   alwaysOn/>,
-<ReferenceInput source="customerId" label="customerId" reference="Customers"   alwaysOn/>,
+<ReferenceInput source="user" label="user" reference="Users"   alwaysOn/>,
+<ReferenceInput source="customer" label="customer" reference="Customers"   alwaysOn/>,
 ,
 ,
 ,
