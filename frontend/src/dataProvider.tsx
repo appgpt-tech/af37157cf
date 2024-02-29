@@ -10,7 +10,7 @@ import qs from 'qs';
 const fieldConfig = {
     Users: [
   {
-    "field": "userName",
+    "field": "username",
     "datatype": "String"
   },
   {
@@ -24,7 +24,7 @@ const fieldConfig = {
 ],
 Cards: [
   {
-    "field": "cardName",
+    "field": "cardname",
     "datatype": "String"
   },
   {
@@ -44,7 +44,7 @@ Cards: [
     "datatype": "String"
   },
   {
-    "field": "imageUrl",
+    "field": "imageurl",
     "datatype": "String"
   },
   {
@@ -58,15 +58,15 @@ Cards: [
 ],
 Sets: [
   {
-    "field": "setName",
+    "field": "setname",
     "datatype": "String"
   },
   {
-    "field": "releaseDate",
+    "field": "releasedate",
     "datatype": "DateTime"
   },
   {
-    "field": "totalCards",
+    "field": "totalcards",
     "datatype": "Integer"
   },
   {
@@ -84,7 +84,7 @@ Inventory: [
     "datatype": "Integer"
   },
   {
-    "field": "dateAdded",
+    "field": "dateadded",
     "datatype": "DateTime"
   },
   {
@@ -102,7 +102,7 @@ Wishlist: [
     "datatype": "Integer"
   },
   {
-    "field": "dateInserted",
+    "field": "dateinserted",
     "datatype": "DateTime"
   },
   {
