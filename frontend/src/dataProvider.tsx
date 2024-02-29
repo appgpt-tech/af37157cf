@@ -10,7 +10,11 @@ import qs from 'qs';
 const fieldConfig = {
     Users: [
   {
-    "field": "userName",
+    "field": "userId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "name",
     "datatype": "String"
   },
   {
@@ -18,73 +22,107 @@ const fieldConfig = {
     "datatype": "String"
   },
   {
+    "field": "password",
+    "datatype": "String"
+  },
+  {
+    "field": "role",
+    "datatype": "String"
+  },
+  {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Cards: [
+Customers: [
   {
-    "field": "cardName",
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "email",
     "datatype": "String"
   },
   {
-    "field": "serial",
+    "field": "password",
     "datatype": "String"
+  },
+  {
+    "field": "name",
+    "datatype": "String"
+  },
+  {
+    "field": "age",
+    "datatype": "Integer"
+  },
+  {
+    "field": "gender",
+    "datatype": "String"
+  },
+  {
+    "field": "weight",
+    "datatype": "Real"
+  },
+  {
+    "field": "height",
+    "datatype": "Real"
+  },
+  {
+    "field": "healthConditions",
+    "datatype": "String"
+  },
+  {
+    "field": "goals",
+    "datatype": "String"
+  },
+  {
+    "field": "dietaryPreferences",
+    "datatype": "String"
+  },
+  {
+    "field": "billingAddress",
+    "datatype": "String"
+  },
+  {
+    "field": "country",
+    "datatype": "String"
+  },
+  {
+    "field": "phone",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Workouts: [
+  {
+    "field": "workoutId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customerId",
+    "datatype": "Integer"
   },
   {
     "field": "type",
     "datatype": "String"
   },
   {
-    "field": "rarity",
+    "field": "duration",
+    "datatype": "Real"
+  },
+  {
+    "field": "intensity",
     "datatype": "String"
   },
   {
-    "field": "condition",
-    "datatype": "String"
+    "field": "caloriesBurned",
+    "datatype": "Real"
   },
   {
-    "field": "imageUrl",
-    "datatype": "String"
-  },
-  {
-    "field": "set",
-    "datatype": "Integer"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Sets: [
-  {
-    "field": "setName",
-    "datatype": "String"
-  },
-  {
-    "field": "releaseDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "totalCards",
-    "datatype": "Integer"
-  },
-  {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Inventory: [
-  {
-    "field": "user",
-    "datatype": "Integer"
-  },
-  {
-    "field": "card",
-    "datatype": "Integer"
-  },
-  {
-    "field": "dateAdded",
+    "field": "date",
     "datatype": "DateTime"
   },
   {
@@ -92,17 +130,127 @@ Inventory: [
     "datatype": "Integer"
   }
 ],
-Wishlist: [
+Nutrition: [
   {
-    "field": "user",
+    "field": "mealId",
     "datatype": "Integer"
   },
   {
-    "field": "card",
+    "field": "customerId",
     "datatype": "Integer"
   },
   {
-    "field": "dateInserted",
+    "field": "foodItem",
+    "datatype": "String"
+  },
+  {
+    "field": "quantity",
+    "datatype": "Real"
+  },
+  {
+    "field": "calories",
+    "datatype": "Real"
+  },
+  {
+    "field": "macronutrients",
+    "datatype": "String"
+  },
+  {
+    "field": "date",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+HealthMetrics: [
+  {
+    "field": "metricId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "type",
+    "datatype": "String"
+  },
+  {
+    "field": "value",
+    "datatype": "Real"
+  },
+  {
+    "field": "unit",
+    "datatype": "String"
+  },
+  {
+    "field": "date",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Notifications: [
+  {
+    "field": "notificationId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "type",
+    "datatype": "String"
+  },
+  {
+    "field": "message",
+    "datatype": "String"
+  },
+  {
+    "field": "dateScheduled",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "status",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+SupportTickets: [
+  {
+    "field": "ticketId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "userId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customerId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "description",
+    "datatype": "String"
+  },
+  {
+    "field": "status",
+    "datatype": "String"
+  },
+  {
+    "field": "creationDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "resolutionDate",
     "datatype": "DateTime"
   },
   {
