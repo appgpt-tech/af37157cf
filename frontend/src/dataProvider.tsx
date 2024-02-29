@@ -10,11 +10,7 @@ import qs from 'qs';
 const fieldConfig = {
     Users: [
   {
-    "field": "userId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "name",
+    "field": "username",
     "datatype": "String"
   },
   {
@@ -34,77 +30,21 @@ const fieldConfig = {
     "datatype": "Integer"
   }
 ],
-Employees: [
+Vendors: [
   {
-    "field": "employeeId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "firstName",
+    "field": "companyName",
     "datatype": "String"
   },
   {
-    "field": "lastName",
+    "field": "contactName",
     "datatype": "String"
   },
   {
-    "field": "middleName",
+    "field": "email",
     "datatype": "String"
   },
   {
-    "field": "dateOfBirth",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "gender",
-    "datatype": "String"
-  },
-  {
-    "field": "nationality",
-    "datatype": "String"
-  },
-  {
-    "field": "maritalStatus",
-    "datatype": "String"
-  },
-  {
-    "field": "contactInformation",
-    "datatype": "String"
-  },
-  {
-    "field": "address",
-    "datatype": "String"
-  },
-  {
-    "field": "departmentTeam",
-    "datatype": "String"
-  },
-  {
-    "field": "positionRole",
-    "datatype": "String"
-  },
-  {
-    "field": "managerSupervisor",
-    "datatype": "String"
-  },
-  {
-    "field": "employmentType",
-    "datatype": "String"
-  },
-  {
-    "field": "startDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "endDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "salaryInformation",
-    "datatype": "Real"
-  },
-  {
-    "field": "profilePicture",
+    "field": "password",
     "datatype": "String"
   },
   {
@@ -112,41 +52,33 @@ Employees: [
     "datatype": "Integer"
   }
 ],
-Evaluations: [
+Customers: [
   {
-    "field": "reviewId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "employeeId",
-    "datatype": "Integer"
-  },
-  {
-    "field": "period",
+    "field": "customerName",
     "datatype": "String"
   },
   {
-    "field": "goalsObjectives",
+    "field": "email",
     "datatype": "String"
   },
   {
-    "field": "achievements",
+    "field": "password",
     "datatype": "String"
   },
   {
-    "field": "improvementAreas",
+    "field": "billingAddress",
     "datatype": "String"
   },
   {
-    "field": "feedbackFromSupervisor",
+    "field": "shippingAddress",
     "datatype": "String"
   },
   {
-    "field": "overallRating",
-    "datatype": "Integer"
+    "field": "country",
+    "datatype": "String"
   },
   {
-    "field": "recommendations",
+    "field": "phone",
     "datatype": "String"
   },
   {
@@ -154,41 +86,99 @@ Evaluations: [
     "datatype": "Integer"
   }
 ],
-Payroll: [
+Inventory: [
   {
-    "field": "payrollId",
+    "field": "product",
     "datatype": "Integer"
   },
   {
-    "field": "employeeId",
+    "field": "quantity",
     "datatype": "Integer"
   },
   {
-    "field": "period",
+    "field": "lowStockThreshold",
+    "datatype": "Integer"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Products: [
+  {
+    "field": "productName",
     "datatype": "String"
   },
   {
-    "field": "grossSalary",
-    "datatype": "Real"
-  },
-  {
-    "field": "deductions",
-    "datatype": "Real"
-  },
-  {
-    "field": "netSalary",
-    "datatype": "Real"
-  },
-  {
-    "field": "payDate",
-    "datatype": "DateTime"
-  },
-  {
-    "field": "overtimeHours",
+    "field": "vendor",
     "datatype": "Integer"
   },
   {
-    "field": "overtimePay",
+    "field": "price",
+    "datatype": "Real"
+  },
+  {
+    "field": "weight",
+    "datatype": "Real"
+  },
+  {
+    "field": "description",
+    "datatype": "String"
+  },
+  {
+    "field": "thumbnail",
+    "datatype": "String"
+  },
+  {
+    "field": "image",
+    "datatype": "String"
+  },
+  {
+    "field": "category",
+    "datatype": "Integer"
+  },
+  {
+    "field": "creationDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "stock",
+    "datatype": "Integer"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+ProductCategories: [
+  {
+    "field": "category",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Discounts: [
+  {
+    "field": "product",
+    "datatype": "Integer"
+  },
+  {
+    "field": "discountType",
+    "datatype": "String"
+  },
+  {
+    "field": "description",
+    "datatype": "String"
+  },
+  {
+    "field": "discountAmount",
+    "datatype": "Real"
+  },
+  {
+    "field": "discountPercent",
     "datatype": "Real"
   },
   {
@@ -196,38 +186,188 @@ Payroll: [
     "datatype": "Integer"
   }
 ],
-LeaveRequests: [
+ShoppingCart: [
   {
-    "field": "requestId",
+    "field": "customer",
     "datatype": "Integer"
   },
   {
-    "field": "employeeId",
+    "field": "product",
     "datatype": "Integer"
   },
   {
-    "field": "typeOfLeave",
+    "field": "priceAtPurchase",
+    "datatype": "Real"
+  },
+  {
+    "field": "quantity",
+    "datatype": "Integer"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Orders: [
+  {
+    "field": "orderNumber",
     "datatype": "String"
   },
   {
-    "field": "startDate",
+    "field": "customer",
+    "datatype": "Integer"
+  },
+  {
+    "field": "totalAmount",
+    "datatype": "Real"
+  },
+  {
+    "field": "vat",
+    "datatype": "Real"
+  },
+  {
+    "field": "totalAmountWithVat",
+    "datatype": "Real"
+  },
+  {
+    "field": "shippingCost",
+    "datatype": "Real"
+  },
+  {
+    "field": "shippingAddress",
+    "datatype": "String"
+  },
+  {
+    "field": "orderAddress",
+    "datatype": "String"
+  },
+  {
+    "field": "orderEmail",
+    "datatype": "String"
+  },
+  {
+    "field": "orderDate",
     "datatype": "DateTime"
   },
   {
-    "field": "endDate",
+    "field": "orderStatus",
+    "datatype": "String"
+  },
+  {
+    "field": "trackingNo",
+    "datatype": "String"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+OrderDetails: [
+  {
+    "field": "orderNumber",
+    "datatype": "Integer"
+  },
+  {
+    "field": "line",
+    "datatype": "Integer"
+  },
+  {
+    "field": "product",
+    "datatype": "Integer"
+  },
+  {
+    "field": "price",
+    "datatype": "Real"
+  },
+  {
+    "field": "quantity",
+    "datatype": "Integer"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+Payments: [
+  {
+    "field": "orderNumber",
+    "datatype": "Integer"
+  },
+  {
+    "field": "amount",
+    "datatype": "Real"
+  },
+  {
+    "field": "paymentMethod",
+    "datatype": "String"
+  },
+  {
+    "field": "paymentDate",
     "datatype": "DateTime"
   },
   {
-    "field": "reason",
+    "field": "paymentStatus",
     "datatype": "String"
   },
   {
-    "field": "approvalStatus",
-    "datatype": "String"
-  },
-  {
-    "field": "approverUserId",
+    "field": "id",
     "datatype": "Integer"
+  }
+],
+Reviews: [
+  {
+    "field": "product",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customer",
+    "datatype": "Integer"
+  },
+  {
+    "field": "vendor",
+    "datatype": "Integer"
+  },
+  {
+    "field": "rating",
+    "datatype": "Real"
+  },
+  {
+    "field": "reviewDetails",
+    "datatype": "String"
+  },
+  {
+    "field": "date",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+SupportTickets: [
+  {
+    "field": "user",
+    "datatype": "Integer"
+  },
+  {
+    "field": "customer",
+    "datatype": "Integer"
+  },
+  {
+    "field": "description",
+    "datatype": "String"
+  },
+  {
+    "field": "status",
+    "datatype": "String"
+  },
+  {
+    "field": "creationDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "resolutionDate",
+    "datatype": "DateTime"
   },
   {
     "field": "id",
