@@ -54,15 +54,15 @@ const ListActions = () => (
 );
 const SetsTitle = () => {
   const record = useRecordContext();
-  return <span>Sets {record ? `"${ record.setName }"` : ""}</span>;
+  return <span>Sets {record ? `"${ record.setname }"` : ""}</span>;
 };
 
 export const SetsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="setName" />
-<DateField source="releaseDate" />
-<NumberField source="totalCards" /><EditButton />
+          <TextField source="setname" />
+<DateField source="releasedate" />
+<NumberField source="totalcards" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -73,11 +73,11 @@ export const SetsEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="setName"   /></Grid>
+<TextInput source="setname"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="releaseDate"   /></Grid>
+<DateInput source="releasedate"   /></Grid>
 <Grid item xs={4}>
-<NumberInput source="totalCards"   /></Grid>
+<NumberInput source="totalcards"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -88,11 +88,11 @@ export const SetsCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="setName"   /></Grid>
+<TextInput source="setname"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="releaseDate"   /></Grid>
+<DateInput source="releasedate"   /></Grid>
 <Grid item xs={4}>
-<NumberInput source="totalCards"   /></Grid>
+<NumberInput source="totalcards"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
