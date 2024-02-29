@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="FitPulse" />
+      <CardHeader title="EmpowerHR" />
       <CardContent> 
-      Health and Fitness app.This app caters to the growing interest in health and wellness people nowdays have.
+      HR application used by a company to streamline the management of employee information, recruitment, performance evaluations, leave requests, and payroll.
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
