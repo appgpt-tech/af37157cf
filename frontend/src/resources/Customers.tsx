@@ -54,24 +54,17 @@ const ListActions = () => (
 );
 const CustomersTitle = () => {
   const record = useRecordContext();
-  return <span>Customers {record ? `"${ record.name }"` : ""}</span>;
+  return <span>Customers {record ? `"${ record.customerName }"` : ""}</span>;
 };
 
 export const CustomersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <NumberField source="customerId" />
+          <TextField source="customerName" />
 <EmailField source="email" />
 <ReadOnlyPasswordField source="password" />
-<TextField source="name" />
-<NumberField source="age" />
-<TextField source="gender" />
-<NumberField source="weight" />
-<NumberField source="height" />
-
-
-
 <TextField source="billingAddress" />
+<TextField source="shippingAddress" />
 <TextField source="country" />
 <TextField source="phone" /><EditButton />
 
@@ -84,29 +77,15 @@ export const CustomersEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<NumberInput source="customerId"   /></Grid>
+<TextInput source="customerName"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="email"   /></Grid>
 <Grid item xs={4}>
 <PasswordInput source="password"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="name"   /></Grid>
-<Grid item xs={4}>
-<NumberInput source="age"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="gender"   /></Grid>
-<Grid item xs={4}>
-<NumberInput source="weight"   /></Grid>
-<Grid item xs={4}>
-<NumberInput source="height"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="healthConditions"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="goals"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="dietaryPreferences"   /></Grid>
-<Grid item xs={4}>
 <TextInput source="billingAddress"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="shippingAddress"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="country"   /></Grid>
 <Grid item xs={4}>
@@ -121,29 +100,15 @@ export const CustomersCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<NumberInput source="customerId"   /></Grid>
+<TextInput source="customerName"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="email"   /></Grid>
 <Grid item xs={4}>
 <PasswordInput source="password"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="name"   /></Grid>
-<Grid item xs={4}>
-<NumberInput source="age"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="gender"   /></Grid>
-<Grid item xs={4}>
-<NumberInput source="weight"   /></Grid>
-<Grid item xs={4}>
-<NumberInput source="height"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="healthConditions"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="goals"   /></Grid>
-<Grid item xs={4}>
-<TextInput source="dietaryPreferences"   /></Grid>
-<Grid item xs={4}>
 <TextInput source="billingAddress"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="shippingAddress"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="country"   /></Grid>
 <Grid item xs={4}>
@@ -155,13 +120,6 @@ export const CustomersCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-,
-,
-,
-,
-,
-,
-,
 ,
 ,
 ,
