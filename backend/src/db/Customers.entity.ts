@@ -8,8 +8,8 @@ export class CustomersEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("integer",{nullable: true})
-customerId: number;
+  @Column("text",{nullable: true})
+customerName: string;
 
 @Column("text",{nullable: true})
 email: string;
@@ -18,31 +18,10 @@ email: string;
 password: string;
 
 @Column("text",{nullable: true})
-name: string;
-
-@Column("integer",{nullable: true})
-age: number;
-
-@Column("text",{nullable: true})
-gender: string;
-
-@Column("real",{nullable: true})
-weight: number;
-
-@Column("real",{nullable: true})
-height: number;
-
-@Column("text",{nullable: true})
-healthConditions: string;
-
-@Column("text",{nullable: true})
-goals: string;
-
-@Column("text",{nullable: true})
-dietaryPreferences: string;
-
-@Column("text",{nullable: true})
 billingAddress: string;
+
+@Column("text",{nullable: true})
+shippingAddress: string;
 
 @Column("text",{nullable: true})
 country: string;
