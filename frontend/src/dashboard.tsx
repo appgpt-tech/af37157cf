@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="ShopSphere Backoffice" />
+      <CardHeader title="PokeVault" />
       <CardContent> 
-      an ecommerce backoffice system to support administration needs of a frontend ecommerce website that provides a seamless shopping experience for users worldwide
+      A web app to keep a Pokémon collectible cards inventory which involves blending themes of collection, organization, and the vibrant world of Pokémon.
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
