@@ -54,15 +54,15 @@ const ListActions = () => (
 );
 const InventoryTitle = () => {
   const record = useRecordContext();
-  return <span>Inventory {record ? `"${ record.user }"` : ""}</span>;
+  return <span>Inventory {record ? `"${ record.product }"` : ""}</span>;
 };
 
 export const InventoryList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <ReferenceField source="user" reference="Users"  />
-<ReferenceField source="card" reference="Cards"  />
-<DateField source="dateAdded" /><EditButton />
+          <ReferenceField source="product" reference="Products"  />
+<NumberField source="quantity" />
+<NumberField source="lowStockThreshold" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -73,11 +73,11 @@ export const InventoryEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<ReferenceInput source="user"  reference="Users"   /></Grid>
+<ReferenceInput source="product"  reference="Products"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="card"  reference="Cards"   /></Grid>
+<NumberInput source="quantity"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="dateAdded"   /></Grid>
+<NumberInput source="lowStockThreshold"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -88,11 +88,11 @@ export const InventoryCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<ReferenceInput source="user"  reference="Users"   /></Grid>
+<ReferenceInput source="product"  reference="Products"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="card"  reference="Cards"   /></Grid>
+<NumberInput source="quantity"   /></Grid>
 <Grid item xs={4}>
-<DateInput source="dateAdded"   /></Grid>
+<NumberInput source="lowStockThreshold"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -100,8 +100,8 @@ export const InventoryCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
-<ReferenceInput source="user" label="user" reference="Users"   alwaysOn/>,
-<ReferenceInput source="card" label="card" reference="Cards"   alwaysOn/>,
+<ReferenceInput source="product" label="product" reference="Products"   alwaysOn/>,
+,
 ,
 
     ];
