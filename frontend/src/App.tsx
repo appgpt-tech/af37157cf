@@ -11,19 +11,15 @@ import { i18nProvider } from "./i18nProvider";
 import LoginPage, { Login } from "./Login";
 import data from "./data";
 import { UsersList, UsersCreate, UsersEdit} from "./resources/Users";
-import { CustomersList, CustomersCreate, CustomersEdit} from "./resources/Customers";
-import { WorkoutsList, WorkoutsCreate, WorkoutsEdit} from "./resources/Workouts";
-import { NutritionList, NutritionCreate, NutritionEdit} from "./resources/Nutrition";
-import { HealthMetricsList, HealthMetricsCreate, HealthMetricsEdit} from "./resources/HealthMetrics";
-import { NotificationsList, NotificationsCreate, NotificationsEdit} from "./resources/Notifications";
-import { SupportTicketsList, SupportTicketsCreate, SupportTicketsEdit} from "./resources/SupportTickets";
+import { EmployeesList, EmployeesCreate, EmployeesEdit} from "./resources/Employees";
+import { EvaluationsList, EvaluationsCreate, EvaluationsEdit} from "./resources/Evaluations";
+import { PayrollList, PayrollCreate, PayrollEdit} from "./resources/Payroll";
+import { LeaveRequestsList, LeaveRequestsCreate, LeaveRequestsEdit} from "./resources/LeaveRequests";
 import UsersIcon from "@mui/icons-material/Person";
-import CustomersIcon from "@mui/icons-material/People";
-import WorkoutsIcon from "@mui/icons-material/FitnessCenter";
-import NutritionIcon from "@mui/icons-material/Fastfood";
-import HealthMetricsIcon from "@mui/icons-material/BarChart";
-import NotificationsIcon from "@mui/icons-material/Notifications";
-import SupportTicketsIcon from "@mui/icons-material/LiveHelp"; 
+import EmployeesIcon from "@mui/icons-material/People";
+import EvaluationsIcon from "@mui/icons-material/Assignment";
+import PayrollIcon from "@mui/icons-material/Payment";
+import LeaveRequestsIcon from "@mui/icons-material/Event"; 
 // SUPERTOKENS
 import React from "react";
 import SuperTokens, {
@@ -91,42 +87,30 @@ create={UsersCreate}
 edit={UsersEdit}
 recordRepresentation="name"
 icon={UsersIcon}/>
-<Resource name="Customers" options={{label:"Customers"}} 
-list={CustomersList}
-create={CustomersCreate}
-edit={CustomersEdit}
-recordRepresentation="name"
-icon={CustomersIcon}/>
-<Resource name="Workouts" options={{label:"Workouts"}} 
-list={WorkoutsList}
-create={WorkoutsCreate}
-edit={WorkoutsEdit}
-recordRepresentation="type"
-icon={WorkoutsIcon}/>
-<Resource name="Nutrition" options={{label:"Nutrition"}} 
-list={NutritionList}
-create={NutritionCreate}
-edit={NutritionEdit}
-recordRepresentation="foodItem"
-icon={NutritionIcon}/>
-<Resource name="HealthMetrics" options={{label:"Health Metrics"}} 
-list={HealthMetricsList}
-create={HealthMetricsCreate}
-edit={HealthMetricsEdit}
-recordRepresentation="type"
-icon={HealthMetricsIcon}/>
-<Resource name="Notifications" options={{label:"Notifications"}} 
-list={NotificationsList}
-create={NotificationsCreate}
-edit={NotificationsEdit}
-recordRepresentation="type"
-icon={NotificationsIcon}/>
-<Resource name="SupportTickets" options={{label:"Support Tickets"}} 
-list={SupportTicketsList}
-create={SupportTicketsCreate}
-edit={SupportTicketsEdit}
-recordRepresentation="description"
-icon={SupportTicketsIcon}/>
+<Resource name="Employees" options={{label:"Employees"}} 
+list={EmployeesList}
+create={EmployeesCreate}
+edit={EmployeesEdit}
+recordRepresentation="firstName"
+icon={EmployeesIcon}/>
+<Resource name="Evaluations" options={{label:"Evaluations"}} 
+list={EvaluationsList}
+create={EvaluationsCreate}
+edit={EvaluationsEdit}
+recordRepresentation="reviewId"
+icon={EvaluationsIcon}/>
+<Resource name="Payroll" options={{label:"Payroll"}} 
+list={PayrollList}
+create={PayrollCreate}
+edit={PayrollEdit}
+recordRepresentation="payrollId"
+icon={PayrollIcon}/>
+<Resource name="LeaveRequests" options={{label:"Leave Requests"}} 
+list={LeaveRequestsList}
+create={LeaveRequestsCreate}
+edit={LeaveRequestsEdit}
+recordRepresentation="requestId"
+icon={LeaveRequestsIcon}/>
     <CustomRoutes noLayout>
       {/*This renders the login UI on the /auth route*/}
       {getSuperTokensRoutesForReactRouterDom(reactRouterDom)}
