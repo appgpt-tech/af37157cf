@@ -85,19 +85,19 @@ const App = () => (
 list={UsersList}
 create={UsersCreate}
 edit={UsersEdit}
-recordRepresentation="userName"
+recordRepresentation="username"
 icon={UsersIcon}/>
 <Resource name="Cards" options={{label:"Cards"}} 
 list={CardsList}
 create={CardsCreate}
 edit={CardsEdit}
-recordRepresentation="cardName"
+recordRepresentation="cardname"
 icon={CardsIcon}/>
 <Resource name="Sets" options={{label:"Sets"}} 
 list={SetsList}
 create={SetsCreate}
 edit={SetsEdit}
-recordRepresentation="setName"
+recordRepresentation="setname"
 icon={SetsIcon}/>
 <Resource name="Inventory" options={{label:"Inventory"}} 
 list={InventoryList}
