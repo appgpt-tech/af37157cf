@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="EmpowerHR" />
+      <CardHeader title="ShopSphere Backoffice" />
       <CardContent> 
-      HR application used by a company to streamline the management of employee information, recruitment, performance evaluations, leave requests, and payroll.
+      an ecommerce backoffice system to support administration needs of a frontend ecommerce website that provides a seamless shopping experience for users worldwide
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
