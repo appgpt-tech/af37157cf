@@ -14,8 +14,11 @@ payrollId: number;
 @Column("integer",{nullable: true})
 employeeId: number;
 
-@Column("text",{nullable: true})
-period: string;
+@Column("date",{nullable: true})
+periodStartDate: Date;
+
+@Column("date",{nullable: true})
+periodEndDate: Date;
 
 @Column("real",{nullable: true})
 grossSalary: number;
