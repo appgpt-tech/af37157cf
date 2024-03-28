@@ -61,8 +61,9 @@ export const PayrollList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
           <NumberField source="payrollId" />
-<ReferenceField source="employeeId" reference="Employees"  />
-<TextField source="period" />
+<ReferenceField source="employeeId" reference="employees"  />
+<DateField source="periodStartDate" />
+<DateField source="periodEndDate" />
 <NumberField source="grossSalary" />
 <NumberField source="deductions" />
 <NumberField source="netSalary" />
@@ -81,9 +82,11 @@ export const PayrollEdit = () => (
                           <Grid item xs={4}>
 <NumberInput source="payrollId"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="employeeId"  reference="Employees"   /></Grid>
+<ReferenceInput source="employeeId"  reference="employees"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="period"   /></Grid>
+<DateInput source="periodStartDate"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="periodEndDate"   /></Grid>
 <Grid item xs={4}>
 <NumberInput source="grossSalary"   /></Grid>
 <Grid item xs={4}>
@@ -108,9 +111,11 @@ export const PayrollCreate = () => (
                                         <Grid item xs={4}>
 <NumberInput source="payrollId"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="employeeId"  reference="Employees"   /></Grid>
+<ReferenceInput source="employeeId"  reference="employees"   /></Grid>
 <Grid item xs={4}>
-<TextInput source="period"   /></Grid>
+<DateInput source="periodStartDate"   /></Grid>
+<Grid item xs={4}>
+<DateInput source="periodEndDate"   /></Grid>
 <Grid item xs={4}>
 <NumberInput source="grossSalary"   /></Grid>
 <Grid item xs={4}>
@@ -131,7 +136,8 @@ export const PayrollCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-<ReferenceInput source="employeeId" label="employeeId" reference="Employees"   alwaysOn/>,
+<ReferenceInput source="employeeId" label="employeeId" reference="employees"   alwaysOn/>,
+,
 ,
 ,
 ,
