@@ -54,14 +54,17 @@ const ListActions = () => (
 );
 const UsersTitle = () => {
   const record = useRecordContext();
-  return <span>Users {record ? `"${ record.userName }"` : ""}</span>;
+  return <span>Users {record ? `"${ record.name }"` : ""}</span>;
 };
 
 export const UsersList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
-          <TextField source="userName" />
-<EmailField source="email" /><EditButton />
+          <NumberField source="userId" />
+<TextField source="name" />
+<EmailField source="email" />
+<ReadOnlyPasswordField source="password" />
+<TextField source="role" /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -72,9 +75,15 @@ export const UsersEdit = () => (
                       <SimpleForm>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                           <Grid item xs={4}>
-<TextInput source="userName"   /></Grid>
+<NumberInput source="userId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="name"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="email"   /></Grid>
+<Grid item xs={4}>
+<PasswordInput source="password"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="role"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -85,9 +94,15 @@ export const UsersCreate = () => (
                                     <SimpleForm>
                                       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 5 }}>
                                         <Grid item xs={4}>
-<TextInput source="userName"   /></Grid>
+<NumberInput source="userId"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="name"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="email"   /></Grid>
+<Grid item xs={4}>
+<PasswordInput source="password"   /></Grid>
+<Grid item xs={4}>
+<TextInput source="role"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -95,6 +110,9 @@ export const UsersCreate = () => (
 
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
+,
+,
+,
 ,
 ,
 
