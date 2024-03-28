@@ -14,8 +14,11 @@ reviewId: number;
 @Column("integer",{nullable: true})
 employeeId: number;
 
-@Column("text",{nullable: true})
-period: string;
+@Column("date",{nullable: true})
+periodStart: Date;
+
+@Column("date",{nullable: true})
+periodEnd: Date;
 
 @Column("text",{nullable: true})
 goalsObjectives: string;
