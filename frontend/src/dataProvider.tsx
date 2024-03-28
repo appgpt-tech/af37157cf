@@ -10,7 +10,11 @@ import qs from 'qs';
 const fieldConfig = {
     Users: [
   {
-    "field": "userName",
+    "field": "userId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "name",
     "datatype": "String"
   },
   {
@@ -18,92 +22,220 @@ const fieldConfig = {
     "datatype": "String"
   },
   {
-    "field": "id",
-    "datatype": "Integer"
-  }
-],
-Cards: [
-  {
-    "field": "cardName",
+    "field": "password",
     "datatype": "String"
   },
   {
-    "field": "serial",
+    "field": "role",
     "datatype": "String"
-  },
-  {
-    "field": "type",
-    "datatype": "String"
-  },
-  {
-    "field": "rarity",
-    "datatype": "String"
-  },
-  {
-    "field": "condition",
-    "datatype": "String"
-  },
-  {
-    "field": "imageUrl",
-    "datatype": "String"
-  },
-  {
-    "field": "set",
-    "datatype": "Integer"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Sets: [
+Employees: [
   {
-    "field": "setName",
+    "field": "employeeId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "firstName",
     "datatype": "String"
   },
   {
-    "field": "releaseDate",
+    "field": "lastName",
+    "datatype": "String"
+  },
+  {
+    "field": "middleName",
+    "datatype": "String"
+  },
+  {
+    "field": "dateOfBirth",
     "datatype": "DateTime"
   },
   {
-    "field": "totalCards",
-    "datatype": "Integer"
+    "field": "gender",
+    "datatype": "String"
+  },
+  {
+    "field": "nationality",
+    "datatype": "String"
+  },
+  {
+    "field": "maritalStatus",
+    "datatype": "String"
+  },
+  {
+    "field": "contactInformation",
+    "datatype": "String"
+  },
+  {
+    "field": "address",
+    "datatype": "String"
+  },
+  {
+    "field": "department",
+    "datatype": "String"
+  },
+  {
+    "field": "position",
+    "datatype": "String"
+  },
+  {
+    "field": "manager",
+    "datatype": "String"
+  },
+  {
+    "field": "employmentType",
+    "datatype": "String"
+  },
+  {
+    "field": "startDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "endDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "salaryInformation",
+    "datatype": "Real"
+  },
+  {
+    "field": "profilePicture",
+    "datatype": "String"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Inventory: [
+Evaluations: [
   {
-    "field": "user",
+    "field": "reviewId",
     "datatype": "Integer"
   },
   {
-    "field": "card",
+    "field": "employeeId",
     "datatype": "Integer"
   },
   {
-    "field": "dateAdded",
+    "field": "periodStart",
     "datatype": "DateTime"
+  },
+  {
+    "field": "periodEnd",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "goalsObjectives",
+    "datatype": "String"
+  },
+  {
+    "field": "achievements",
+    "datatype": "String"
+  },
+  {
+    "field": "improvementAreas",
+    "datatype": "String"
+  },
+  {
+    "field": "feedbackFromSupervisor",
+    "datatype": "String"
+  },
+  {
+    "field": "overallRating",
+    "datatype": "Integer"
+  },
+  {
+    "field": "recommendations",
+    "datatype": "String"
   },
   {
     "field": "id",
     "datatype": "Integer"
   }
 ],
-Wishlist: [
+Payroll: [
   {
-    "field": "user",
+    "field": "payrollId",
     "datatype": "Integer"
   },
   {
-    "field": "card",
+    "field": "employeeId",
     "datatype": "Integer"
   },
   {
-    "field": "dateInserted",
+    "field": "periodStartDate",
     "datatype": "DateTime"
+  },
+  {
+    "field": "periodEndDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "grossSalary",
+    "datatype": "Real"
+  },
+  {
+    "field": "deductions",
+    "datatype": "Real"
+  },
+  {
+    "field": "netSalary",
+    "datatype": "Real"
+  },
+  {
+    "field": "payDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "overtimeHours",
+    "datatype": "Integer"
+  },
+  {
+    "field": "overtimePay",
+    "datatype": "Real"
+  },
+  {
+    "field": "id",
+    "datatype": "Integer"
+  }
+],
+LeaveRequests: [
+  {
+    "field": "requestId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "employeeId",
+    "datatype": "Integer"
+  },
+  {
+    "field": "typeOfLeave",
+    "datatype": "String"
+  },
+  {
+    "field": "startDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "endDate",
+    "datatype": "DateTime"
+  },
+  {
+    "field": "reason",
+    "datatype": "String"
+  },
+  {
+    "field": "approvalStatus",
+    "datatype": "String"
+  },
+  {
+    "field": "approverUserId",
+    "datatype": "Integer"
   },
   {
     "field": "id",
