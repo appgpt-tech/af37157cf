@@ -39,13 +39,13 @@ contactInformation: string;
 address: string;
 
 @Column("text",{nullable: true})
-departmentTeam: string;
+department: string;
 
 @Column("text",{nullable: true})
-positionRole: string;
+position: string;
 
 @Column("text",{nullable: true})
-managerSupervisor: string;
+manager: string;
 
 @Column("text",{nullable: true})
 employmentType: string;
