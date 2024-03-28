@@ -3,9 +3,9 @@
  import { Card, CardContent, CardHeader } from "@mui/material";
     export const Dashboard = () => (
       <Card>
-      <CardHeader title="PokeVault" />
+      <CardHeader title="EmpowerHR" />
       <CardContent> 
-      A web app to keep a Pokémon collectible cards inventory which involves blending themes of collection, organization, and the vibrant world of Pokémon.
+      HR application used by a company to streamline the management of employee information, recruitment, performance evaluations, leave requests, and payroll.
       <p>Built with{' '}
       <a
         href="https://www.appgpt.tech"
