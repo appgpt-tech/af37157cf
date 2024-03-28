@@ -61,13 +61,13 @@ export const LeaveRequestsList = () => (
       <List actions={<ListActions  />} filters={ResourceFilters} >
         <DatagridConfigurable>
           <NumberField source="requestId" />
-<ReferenceField source="employeeId" reference="Employees"  />
+<ReferenceField source="employeeId" reference="employees"  />
 <TextField source="typeOfLeave" />
 <DateField source="startDate" />
 <DateField source="endDate" />
 
 <TextField source="approvalStatus" />
-<ReferenceField source="approverUserId" reference="Users"  /><EditButton />
+<ReferenceField source="approverUserId" reference="users"  /><EditButton />
 
         </DatagridConfigurable>
       </List>
@@ -80,7 +80,7 @@ export const LeaveRequestsEdit = () => (
                           <Grid item xs={4}>
 <NumberInput source="requestId"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="employeeId"  reference="Employees"   /></Grid>
+<ReferenceInput source="employeeId"  reference="employees"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="typeOfLeave"   /></Grid>
 <Grid item xs={4}>
@@ -92,7 +92,7 @@ export const LeaveRequestsEdit = () => (
 <Grid item xs={4}>
 <TextInput source="approvalStatus"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="approverUserId"  reference="Users"   /></Grid>
+<ReferenceInput source="approverUserId"  reference="users"   /></Grid>
                         </Grid>
                       </SimpleForm>
                     </Edit>
@@ -105,7 +105,7 @@ export const LeaveRequestsCreate = () => (
                                         <Grid item xs={4}>
 <NumberInput source="requestId"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="employeeId"  reference="Employees"   /></Grid>
+<ReferenceInput source="employeeId"  reference="employees"   /></Grid>
 <Grid item xs={4}>
 <TextInput source="typeOfLeave"   /></Grid>
 <Grid item xs={4}>
@@ -117,7 +117,7 @@ export const LeaveRequestsCreate = () => (
 <Grid item xs={4}>
 <TextInput source="approvalStatus"   /></Grid>
 <Grid item xs={4}>
-<ReferenceInput source="approverUserId"  reference="Users"   /></Grid>
+<ReferenceInput source="approverUserId"  reference="users"   /></Grid>
                                       </Grid>
                                     </SimpleForm>
                                   </Create>
@@ -126,13 +126,13 @@ export const LeaveRequestsCreate = () => (
 const ResourceFilters = [
       <TextInput source="q" label="Search" alwaysOn />,
 ,
-<ReferenceInput source="employeeId" label="employeeId" reference="Employees"   alwaysOn/>,
+<ReferenceInput source="employeeId" label="employeeId" reference="employees"   alwaysOn/>,
 ,
 ,
 ,
 ,
 ,
-<ReferenceInput source="approverUserId" label="approverUserId" reference="Users"   alwaysOn/>,
+<ReferenceInput source="approverUserId" label="approverUserId" reference="users"   alwaysOn/>,
 
     ];
 
