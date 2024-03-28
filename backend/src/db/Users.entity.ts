@@ -8,11 +8,20 @@ export class UsersEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column("text",{nullable: true})
-userName: string;
+  @Column("integer",{nullable: true})
+userId: number;
+
+@Column("text",{nullable: true})
+name: string;
 
 @Column("text",{nullable: true})
 email: string;
+
+@Column("text",{nullable: true})
+password: string;
+
+@Column("text",{nullable: true})
+role: string;
 
 
 }
